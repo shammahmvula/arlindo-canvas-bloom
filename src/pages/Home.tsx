@@ -76,12 +76,12 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroBallerina})`,
-            filter: "brightness(0.4)",
-          }}
+        <img
+          src={heroBallerina}
+          alt="Ballet dancer - Contemporary African art by Arlindo Maunde"
+          loading="eager"
+          fetchPriority="high"
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
         />
         
         <motion.div

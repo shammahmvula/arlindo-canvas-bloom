@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ArtworkCard from "@/components/ArtworkCard";
+import OptimizedImage from "@/components/OptimizedImage";
 import { artworks } from "@/data/artworks";
 import { useToast } from "@/hooks/use-toast";
 
@@ -72,10 +73,12 @@ const ArtworkDetail = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <img
+              <OptimizedImage
                 src={artwork.image}
-                alt={artwork.title}
+                alt={`${artwork.title} - ${artwork.medium} by Arlindo Maunde, ${artwork.year}`}
                 className="w-full h-auto rounded-lg shadow-2xl"
+                priority={true}
+                aspectRatio="4/5"
               />
               {artwork.sold && (
                 <Badge className="absolute top-4 right-4 bg-gold text-gold-foreground text-base px-4 py-2">

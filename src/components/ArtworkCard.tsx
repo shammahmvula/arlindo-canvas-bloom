@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Badge } from "./ui/badge";
+import OptimizedImage from "./OptimizedImage";
 
 interface ArtworkCardProps {
   id: string;
@@ -14,11 +15,12 @@ interface ArtworkCardProps {
 const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold }: ArtworkCardProps) => {
   return (
     <Link to={`/artwork/${id}`} className="artwork-card group block">
-      <div className="relative overflow-hidden rounded-lg bg-secondary">
-        <img
+      <div className="relative overflow-hidden rounded-lg">
+        <OptimizedImage
           src={image}
-          alt={title}
-          className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+          alt={`${title} - Mixed media painting by Arlindo Maunde`}
+          className="w-full h-auto rounded-lg transition-transform duration-500 group-hover:scale-105"
+          aspectRatio="4/5"
         />
         {sold && (
           <Badge className="absolute top-4 right-4 bg-gold text-gold-foreground">

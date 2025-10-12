@@ -8,39 +8,42 @@ import heroBallerina from "@/assets/hero-ballerina.jpg";
 import portraitPower from "@/assets/portrait-power.jpg";
 import childhoodJoy from "@/assets/childhood-joy.jpg";
 import culturalCelebration from "@/assets/cultural-celebration.jpg";
+import contemplation from "@/assets/contemplation.jpg";
 import { ArrowRight } from "lucide-react";
 
 const Home = () => {
   const featuredWorks = [
     {
-      id: "2",
-      title: "Portrait of Power",
-      image: portraitPower,
-      category: "portraits",
-      medium: "Acrylic on canvas",
-      dimensions: "100 x 100 cm",
-      year: 2024,
-      price: 3800,
+      id: "1",
+      title: "Soulful Serenade",
+      image: childhoodJoy,
+      medium: "Mixed media on canvas",
+      dimensions: "100 × 80 cm (39.4 × 31.5 inches)",
+      price: 2800,
     },
     {
       id: "3",
-      title: "Childhood Joy",
-      image: childhoodJoy,
-      category: "children",
+      title: "Unspoken Weight",
+      image: portraitPower,
       medium: "Mixed media on canvas",
-      dimensions: "100 x 100 cm",
-      year: 2023,
-      price: 3200,
+      dimensions: "90 × 70 cm (35.4 × 27.6 inches)",
+      price: 2500,
     },
     {
       id: "4",
-      title: "Cultural Celebration",
+      title: "Looking Upward",
+      image: contemplation,
+      medium: "Mixed media on canvas",
+      dimensions: "85 × 65 cm (33.5 × 25.6 inches)",
+      price: 2400,
+    },
+    {
+      id: "5",
+      title: "Elegance Unbound",
       image: culturalCelebration,
-      category: "cultural",
-      medium: "Oil and mixed media on canvas",
-      dimensions: "120 x 100 cm",
-      year: 2024,
-      sold: true,
+      medium: "Mixed media on canvas",
+      dimensions: "110 × 85 cm (43.3 × 33.5 inches)",
+      price: 3000,
     },
   ];
 
@@ -51,19 +54,19 @@ const Home = () => {
       link: "/gallery?category=ballet",
     },
     {
-      name: "Portraits of Power",
-      description: "Bold expressionist portraits capturing the beauty and dignity of Black excellence",
+      name: "Portraits",
+      description: "Emotionally powerful portraits exploring hope, struggle, and human expression",
       link: "/gallery?category=portraits",
     },
     {
-      name: "Childhood Joy",
-      description: "Heartwarming pieces that celebrate the innocence and wonder of young life",
-      link: "/gallery?category=children",
+      name: "Cultural Expression",
+      description: "Celebrating music, heritage, and the soulful voices of Black culture",
+      link: "/gallery?category=cultural",
     },
     {
-      name: "Cultural Celebration",
-      description: "Works honoring African heritage, family bonds, and shared cultural pride",
-      link: "/gallery?category=cultural",
+      name: "Feminine Grace",
+      description: "Honoring the quiet strength and timeless beauty of Black femininity",
+      link: "/gallery?category=feminine",
     },
   ];
 
@@ -91,10 +94,10 @@ const Home = () => {
             ARLINDO MAUNDE
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 drop-shadow-md">
-            Contemporary African Expressionist Art
+            Where Movement Becomes Art
           </p>
           <p className="text-lg text-primary-foreground/80 mb-10 max-w-2xl mx-auto drop-shadow-md">
-            Celebrating Movement, Culture & Humanity Through Paint
+            Contemporary African expressionist paintings celebrating culture, grace, and humanity
           </p>
           <Link to="/gallery">
             <Button variant="hero" size="xl">
@@ -164,14 +167,14 @@ const Home = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-              Featured Works
+              Latest Works
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A selection of recent pieces available for acquisition
+              Recent pieces available for acquisition
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
             {featuredWorks.map((artwork, index) => (
               <motion.div
                 key={artwork.id}

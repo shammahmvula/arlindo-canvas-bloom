@@ -4,11 +4,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
-import heroBallerina from "@/assets/hero-ballerina.jpg";
-import portraitPower from "@/assets/portrait-power.jpg";
-import childhoodJoy from "@/assets/childhood-joy.jpg";
-import culturalCelebration from "@/assets/cultural-celebration.jpg";
-import contemplation from "@/assets/contemplation.jpg";
+import heroBallerina from "@/assets/grace-in-motion.png";
+import soulfulSerenade from "@/assets/soulful-serenade.png";
+import unspokenWeight from "@/assets/unspoken-weight.png";
+import lookingUpward from "@/assets/looking-upward.png";
+import eleganceUnbound from "@/assets/elegance-unbound.png";
 import { ArrowRight } from "lucide-react";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
     {
       id: "1",
       title: "Soulful Serenade",
-      image: childhoodJoy,
+      image: soulfulSerenade,
       medium: "Mixed media on canvas",
       dimensions: "100 × 80 cm (39.4 × 31.5 inches)",
       price: 2800,
@@ -24,7 +24,7 @@ const Home = () => {
     {
       id: "3",
       title: "Unspoken Weight",
-      image: portraitPower,
+      image: unspokenWeight,
       medium: "Mixed media on canvas",
       dimensions: "90 × 70 cm (35.4 × 27.6 inches)",
       price: 2500,
@@ -32,7 +32,7 @@ const Home = () => {
     {
       id: "4",
       title: "Looking Upward",
-      image: contemplation,
+      image: lookingUpward,
       medium: "Mixed media on canvas",
       dimensions: "85 × 65 cm (33.5 × 25.6 inches)",
       price: 2400,
@@ -40,7 +40,7 @@ const Home = () => {
     {
       id: "5",
       title: "Elegance Unbound",
-      image: culturalCelebration,
+      image: eleganceUnbound,
       medium: "Mixed media on canvas",
       dimensions: "110 × 85 cm (43.3 × 33.5 inches)",
       price: 3000,

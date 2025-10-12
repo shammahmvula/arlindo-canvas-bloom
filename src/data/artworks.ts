@@ -15,7 +15,7 @@ export const artworks: Artwork[] = [
   {
     id: "1",
     title: "Soulful Serenade",
-    image: "/src/assets/childhood-joy.jpg", // Will be replaced with musician image
+    image: "/src/assets/soulful-serenade.png",
     category: "cultural",
     medium: "Mixed media on canvas",
     dimensions: "100 × 80 cm (39.4 × 31.5 inches)",
@@ -26,7 +26,7 @@ export const artworks: Artwork[] = [
   {
     id: "2",
     title: "Grace in Motion",
-    image: "/src/assets/hero-ballerina.jpg",
+    image: "/src/assets/grace-in-motion.png",
     category: "ballet",
     medium: "Mixed media on canvas",
     dimensions: "120 × 90 cm (47.2 × 35.4 inches)",
@@ -37,7 +37,7 @@ export const artworks: Artwork[] = [
   {
     id: "3",
     title: "Unspoken Weight",
-    image: "/src/assets/portrait-power.jpg", // Will be replaced with hands covering face image
+    image: "/src/assets/unspoken-weight.png",
     category: "portraits",
     medium: "Mixed media on canvas",
     dimensions: "90 × 70 cm (35.4 × 27.6 inches)",
@@ -48,7 +48,7 @@ export const artworks: Artwork[] = [
   {
     id: "4",
     title: "Looking Upward",
-    image: "/src/assets/contemplation.jpg", // Will be replaced with upward-gazing portrait
+    image: "/src/assets/looking-upward.png",
     category: "portraits",
     medium: "Mixed media on canvas",
     dimensions: "85 × 65 cm (33.5 × 25.6 inches)",
@@ -59,7 +59,7 @@ export const artworks: Artwork[] = [
   {
     id: "5",
     title: "Elegance Unbound",
-    image: "/src/assets/cultural-celebration.jpg", // Will be replaced with woman in flowing dress
+    image: "/src/assets/elegance-unbound.png",
     category: "feminine",
     medium: "Mixed media on canvas",
     dimensions: "110 × 85 cm (43.3 × 33.5 inches)",

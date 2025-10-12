@@ -1,3 +1,9 @@
+import soulfulSerenade from "@/assets/soulful-serenade.png";
+import graceInMotion from "@/assets/grace-in-motion.png";
+import unspokenWeight from "@/assets/unspoken-weight.png";
+import lookingUpward from "@/assets/looking-upward.png";
+import eleganceUnbound from "@/assets/elegance-unbound.png";
+
 export interface Artwork {
   id: string;
   title: string;
@@ -15,7 +21,7 @@ export const artworks: Artwork[] = [
   {
     id: "1",
     title: "Soulful Serenade",
-    image: "/src/assets/soulful-serenade.png",
+    image: soulfulSerenade,
     category: "cultural",
     medium: "Mixed media on canvas",
     dimensions: "100 × 80 cm (39.4 × 31.5 inches)",
@@ -26,7 +32,7 @@ export const artworks: Artwork[] = [
   {
     id: "2",
     title: "Grace in Motion",
-    image: "/src/assets/grace-in-motion.png",
+    image: graceInMotion,
     category: "ballet",
     medium: "Mixed media on canvas",
     dimensions: "120 × 90 cm (47.2 × 35.4 inches)",
@@ -37,7 +43,7 @@ export const artworks: Artwork[] = [
   {
     id: "3",
     title: "Unspoken Weight",
-    image: "/src/assets/unspoken-weight.png",
+    image: unspokenWeight,
     category: "portraits",
     medium: "Mixed media on canvas",
     dimensions: "90 × 70 cm (35.4 × 27.6 inches)",
@@ -48,7 +54,7 @@ export const artworks: Artwork[] = [
   {
     id: "4",
     title: "Looking Upward",
-    image: "/src/assets/looking-upward.png",
+    image: lookingUpward,
     category: "portraits",
     medium: "Mixed media on canvas",
     dimensions: "85 × 65 cm (33.5 × 25.6 inches)",
@@ -59,7 +65,7 @@ export const artworks: Artwork[] = [
   {
     id: "5",
     title: "Elegance Unbound",
-    image: "/src/assets/elegance-unbound.png",
+    image: eleganceUnbound,
     category: "feminine",
     medium: "Mixed media on canvas",
     dimensions: "110 × 85 cm (43.3 × 33.5 inches)",

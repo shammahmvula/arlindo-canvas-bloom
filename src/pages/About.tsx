@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import artistStudio from "@/assets/artist-studio.jpg";
+import artistStudio from "@/assets/arlindo-gallery.jpg";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -34,7 +34,7 @@ const About = () => {
             >
               <img
                 src={artistStudio}
-                alt="Arlindo Maunde in his studio"
+                alt="Arlindo Maunde in gallery with his artwork"
                 className="w-full h-auto rounded-lg shadow-2xl"
               />
             </motion.div>

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
-import heroBallerina from "@/assets/grace-in-motion.png";
+import heroBallerina from "@/assets/hero-ballerina.jpg";
 import soulfulSerenade from "@/assets/soulful-serenade.png";
 import unspokenWeight from "@/assets/unspoken-weight.png";
 import lookingUpward from "@/assets/looking-upward.png";

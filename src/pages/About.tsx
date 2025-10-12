@@ -38,7 +38,7 @@ const About = () => {
                 alt="Arlindo Maunde in gallery with his artwork"
                 className="w-full h-auto rounded-lg shadow-2xl"
                 priority={true}
-                aspectRatio="16/9"
+                aspectRatio="auto"
               />
             </motion.div>
 

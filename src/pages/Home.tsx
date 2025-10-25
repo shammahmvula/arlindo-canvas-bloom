@@ -4,19 +4,22 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
-import heroBallerina from "@/assets/hero-ballerina.jpg";
-import soulfulSerenade from "@/assets/soulful-serenade.png";
+import graceInMotion from "@/assets/grace-in-motion.png";
 import unspokenWeight from "@/assets/unspoken-weight.png";
 import lookingUpward from "@/assets/looking-upward.png";
 import eleganceUnbound from "@/assets/elegance-unbound.png";
+import portraitPower from "@/assets/portrait-power.jpg";
+import childhoodJoy from "@/assets/childhood-joy.jpg";
+import culturalCelebration from "@/assets/cultural-celebration.jpg";
+import contemplation from "@/assets/contemplation.jpg";
 import { ArrowRight } from "lucide-react";
 
 const Home = () => {
   const featuredWorks = [
     {
-      id: "1",
-      title: "Soulful Serenade",
-      image: soulfulSerenade,
+      id: "2",
+      title: "Grace in Motion",
+      image: graceInMotion,
       medium: "Mixed media on canvas",
       dimensions: "100 × 80 cm (39.4 × 31.5 inches)",
       price: 2800,
@@ -74,41 +77,188 @@ const Home = () => {
     <>
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <img
-          src={heroBallerina}
-          alt="Ballet dancer - Contemporary African art by Arlindo Maunde"
-          loading="eager"
-          fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
-        />
-        
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
-        >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 text-primary-foreground drop-shadow-lg">
-            ARLINDO MAUNDE
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 drop-shadow-md">
-            Where Movement Becomes Art
-          </p>
-          <p className="text-lg text-primary-foreground/80 mb-10 max-w-2xl mx-auto drop-shadow-md">
-            Contemporary African expressionist paintings celebrating culture, grace, and humanity
-          </p>
-          <Link to="/gallery">
-            <Button variant="hero" size="xl">
-              Explore Collection
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        </motion.div>
+      {/* Bento Box Hero Section */}
+      <section className="bg-background py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-[1400px]">
+          {/* Bento Box Grid */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
+          >
+            {/* Position 1: Grace in Motion - Large (2x2) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="lg:col-span-2 lg:row-span-2 group"
+            >
+              <Link to="/artwork/2" className="block relative overflow-hidden rounded-xl h-full min-h-[300px] md:min-h-[400px] lg:min-h-[600px]">
+                <img
+                  src={graceInMotion}
+                  alt="Grace in Motion - Ballet dancer with dramatic arm pose by Arlindo Maunde"
+                  loading="eager"
+                  fetchPriority="high"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
 
-        {/* Paint drip effect */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+            {/* Position 2: Unspoken Weight - Medium */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="group"
+            >
+              <Link to="/artwork/3" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+                <img
+                  src={unspokenWeight}
+                  alt="Unspoken Weight - Figure with hands covering face by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
+
+            {/* Position 3: Looking Upward - Medium */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="group"
+            >
+              <Link to="/artwork/4" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+                <img
+                  src={lookingUpward}
+                  alt="Looking Upward - Child with hopeful expression by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
+
+            {/* Position 4: Elegance Unbound - Medium */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="group"
+            >
+              <Link to="/artwork/5" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+                <img
+                  src={eleganceUnbound}
+                  alt="Elegance Unbound - Woman in flowing dress by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
+
+            {/* Position 5: Portrait Power - Large (2x1) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="lg:col-span-2 group"
+            >
+              <Link to="/artwork/6" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+                <img
+                  src={portraitPower}
+                  alt="Portrait with vibrant orange accents by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
+
+            {/* Position 6: Childhood Joy - Small */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="group"
+            >
+              <Link to="/gallery" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+                <img
+                  src={childhoodJoy}
+                  alt="Childhood Joy - Children portrait by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
+
+            {/* Position 7: Cultural Celebration - Medium Wide (2x1) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="lg:col-span-2 group"
+            >
+              <Link to="/gallery" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+                <img
+                  src={culturalCelebration}
+                  alt="Cultural Celebration - Traditional dancer by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
+
+            {/* Position 8: Contemplation - Medium Wide (2x1) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="lg:col-span-2 group"
+            >
+              <Link to="/gallery" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+                <img
+                  src={contemplation}
+                  alt="Contemplative artwork by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Text Section Below Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="text-center mt-16"
+          >
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 text-foreground tracking-wide">
+              ARLINDO MAUNDE
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+              Contemporary African Expressionist Art<br />
+              Celebrating Movement, Culture & Humanity
+            </p>
+            <Link to="/gallery">
+              <Button 
+                variant="default" 
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 hover:shadow-2xl transition-all duration-300 px-8 py-6 text-base font-semibold rounded-lg"
+              >
+                Explore Full Collection
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
       </section>
 
       {/* Featured Collections */}

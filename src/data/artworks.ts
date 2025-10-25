@@ -3,7 +3,6 @@ import graceInMotion from "@/assets/grace-in-motion.png";
 import unspokenWeight from "@/assets/unspoken-weight.png";
 import lookingUpward from "@/assets/looking-upward.png";
 import eleganceUnbound from "@/assets/elegance-unbound.png";
-import dancerLeap from "@/assets/dancer-leap.jpg";
 
 export interface Artwork {
   id: string;
@@ -73,17 +72,6 @@ export const artworks: Artwork[] = [
     year: 2024,
     price: 3000,
     description: "A woman in her power, dressed in flowing elegance, stands grounded yet ready to soar. This piece celebrates the quiet strength and timeless beauty of Black femininity.",
-  },
-  {
-    id: "6",
-    title: "Leaping Through Tradition",
-    image: dancerLeap,
-    category: "ballet",
-    medium: "Mixed media on canvas",
-    dimensions: "120 × 90 cm (47.2 × 35.4 inches)",
-    year: 2024,
-    price: 3500,
-    description: "A powerful moment captured mid-leap, where tradition meets contemporary expression. The dancer's form defies gravity while honoring ancestral movements, creating a bridge between past and present through explosive energy and precision.",
   },
 ];
 

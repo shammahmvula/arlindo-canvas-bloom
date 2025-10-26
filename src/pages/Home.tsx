@@ -85,9 +85,7 @@ const Home = () => {
       
       {/* Diagonal Split Grid Hero Section */}
       <section className="relative bg-background overflow-visible">
-        <div className="relative w-full max-w-[1400px] mx-auto min-h-[85vh] px-4 md:px-10 lg:px-[60px] py-20 lg:py-[100px]">
-          {/* Smooth fade at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-[120px] bg-gradient-to-b from-transparent via-background/30 to-background pointer-events-none z-20" />
+        <div className="relative w-full mx-auto min-h-[85vh] px-4 md:px-10 lg:px-[60px] py-20 lg:py-[100px]">
           
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />

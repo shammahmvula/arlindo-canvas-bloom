@@ -210,12 +210,12 @@ const Home = () => {
               </Link>
             </motion.article>
 
-            {/* Artwork 5 - Colorful Child Portrait (Medium, Lower-Left) */}
+            {/* Artwork 5 - Colorful Child Portrait (Medium, Bottom-Left of Bottom-Right) */}
             <motion.article
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="absolute top-[62%] md:top-[60%] left-[22%] md:left-[20%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[5]"
+              className="absolute bottom-[8%] md:bottom-[10%] left-[48%] md:left-[50%] w-[20%] lg:w-[18%] max-w-[360px] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
               role="article"
             >
               <Link 

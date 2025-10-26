@@ -85,7 +85,7 @@ const Home = () => {
       
       {/* Diagonal Split Grid Hero Section */}
       <section className="relative bg-background overflow-visible">
-        <div className="relative w-full mx-auto min-h-[85vh] px-4 md:px-10 lg:px-[60px] py-20 lg:py-[100px]">
+        <div className="relative w-full mx-auto min-h-[85vh] px-4 md:px-10 lg:px-[60px] pt-20 pb-32 lg:pt-[100px] lg:pb-[160px]">
           
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
@@ -368,7 +368,7 @@ const Home = () => {
       </section>
 
       {/* Featured Collections */}
-      <section className="py-20 bg-background">
+      <section className="pt-28 pb-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

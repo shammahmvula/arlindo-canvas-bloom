@@ -133,8 +133,8 @@ const Home = () => {
               className="absolute top-[2%] left-[3%] w-[24%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-10 overflow-hidden"
               role="article"
             >
-              {/* Uniform Standard Overlay (50%) */}
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
+              {/* Individual Lighter Overlay (25%) */}
+              <div className="absolute inset-0 bg-black/25 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
                 className="block w-full h-full relative z-[3]"
@@ -284,8 +284,8 @@ const Home = () => {
               className="absolute bottom-[3%] right-[6%] w-[22%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-9 overflow-hidden"
               role="article"
             >
-              {/* Uniform Standard Overlay (50%) */}
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
+              {/* Individual Lighter Overlay (25%) */}
+              <div className="absolute inset-0 bg-black/25 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
                 className="block w-full h-full relative z-[3]"

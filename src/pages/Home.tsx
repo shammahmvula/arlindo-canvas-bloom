@@ -84,26 +84,26 @@ const Home = () => {
       <Navbar />
       
       {/* Diagonal Split Grid Hero Section */}
-      <section className="relative bg-background overflow-hidden min-h-[85vh]">
-        <div className="relative w-full min-h-[85vh]">
+      <section className="relative bg-background overflow-hidden">
+        <div className="relative w-full h-[85vh] max-h-[900px]">
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/50 z-[5]" />
           
           {/* Introductory Text Overlay */}
-          <div className="absolute inset-0 z-[25] flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 z-[15] flex flex-col items-center justify-center text-center px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="max-w-[900px]"
             >
-              <h1 className="font-serif text-[48px] md:text-[64px] lg:text-[72px] font-bold mb-4 text-white tracking-[0.05em] leading-[1.1] drop-shadow-[0_6px_16px_rgba(0,0,0,0.9)]">
+              <h1 className="font-serif text-[48px] md:text-[64px] lg:text-[80px] font-bold mb-4 text-white tracking-[0.05em] leading-[1.1] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
                 ARLINDO MAUNDE
               </h1>
-              <p className="text-xl md:text-2xl lg:text-[24px] font-medium mb-3 text-white/95 tracking-[0.01em] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+              <p className="text-xl md:text-2xl lg:text-[28px] font-medium mb-3 text-white/95 tracking-[0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 Contemporary African Expressionist Art
               </p>
-              <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+              <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 Celebrating Movement, Culture & Humanity Through Paint
               </p>
               <Link to="/gallery">
@@ -118,21 +118,20 @@ const Home = () => {
             </motion.div>
           </div>
 
-          {/* Diagonal Grid Container with 7 Artworks - Better Spacing */}
+          {/* Diagonal Grid Container - Compressed */}
           <div className="absolute inset-0 w-full h-full">
             
             {/* Artwork 1 - Hero Trumpet Player (Large, Top-Left) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="absolute top-[3%] left-[4%] w-[30%] max-w-[500px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-10 overflow-hidden"
+              className="absolute top-[2%] left-[3%] w-[45%] md:w-[28%] lg:w-[24%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-10 overflow-hidden"
               role="article"
             >
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
-                className="block w-full h-full relative z-[3]"
+                className="block w-full h-full"
                 aria-label="View Trumpet Player artwork details"
               >
                 <img
@@ -142,22 +141,21 @@ const Home = () => {
                   fetchPriority="high"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[4]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
             {/* Artwork 2 - Holy Bible (Medium, Top-Right) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute top-[15%] right-[6%] w-[22%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-8 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="absolute top-[8%] right-[8%] w-[38%] md:w-[22%] lg:w-[18%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-8 overflow-hidden"
               role="article"
             >
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
-                className="block w-full h-full relative z-[3]"
+                className="block w-full h-full"
                 aria-label="View Holy Bible artwork details"
               >
                 <img
@@ -166,22 +164,21 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[4]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
             {/* Artwork 3 - Cultural Portrait (Small, Middle-Left) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute top-[40%] left-[8%] w-[18%] max-w-[340px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="absolute top-[35%] left-[5%] w-[35%] md:w-[20%] lg:w-[15%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
               role="article"
             >
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
-                className="block w-full h-full relative z-[3]"
+                className="block w-full h-full"
                 aria-label="View Cultural Portrait artwork details"
               >
                 <img
@@ -190,22 +187,21 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[4]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
             {/* Artwork 4 - Blue Portrait (Medium, Middle-Center-Right) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute top-[35%] right-[12%] w-[25%] max-w-[450px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-7 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="absolute top-[30%] right-[15%] w-[42%] md:w-[24%] lg:w-[20%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-7 overflow-hidden"
               role="article"
             >
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
-                className="block w-full h-full relative z-[3]"
+                className="block w-full h-full"
                 aria-label="View Blue Portrait artwork details"
               >
                 <img
@@ -214,22 +210,21 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[4]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
             {/* Artwork 5 - Portrait (Medium, Lower-Left) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute top-[68%] left-[12%] w-[23%] max-w-[420px] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-5 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="absolute top-[60%] left-[12%] w-[40%] md:w-[22%] lg:w-[18%] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-5 overflow-hidden"
               role="article"
             >
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
-                className="block w-full h-full relative z-[3]"
+                className="block w-full h-full"
                 aria-label="View Portrait artwork details"
               >
                 <img
@@ -238,22 +233,21 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[4]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
             {/* Artwork 6 - Contemporary Portrait (Medium, Lower-Center) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="absolute top-[60%] left-[42%] w-[24%] max-w-[440px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="absolute top-[52%] left-[38%] w-[42%] md:w-[23%] lg:w-[19%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
               role="article"
             >
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
-                className="block w-full h-full relative z-[3]"
+                className="block w-full h-full"
                 aria-label="View Contemporary Portrait artwork details"
               >
                 <img
@@ -262,22 +256,21 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[4]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
             {/* Artwork 7 - Expressive Portrait (Medium-Large, Bottom-Right) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.85 }}
-              className="absolute bottom-[5%] right-[8%] w-[27%] max-w-[480px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-9 overflow-hidden"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.75 }}
+              className="absolute bottom-[3%] right-[6%] w-[45%] md:w-[26%] lg:w-[22%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-9 overflow-hidden"
               role="article"
             >
-              <div className="absolute inset-0 bg-black/50 z-[2] pointer-events-none" />
               <Link 
                 to="/gallery" 
-                className="block w-full h-full relative z-[3]"
+                className="block w-full h-full"
                 aria-label="View Expressive Portrait artwork details"
               >
                 <img
@@ -286,7 +279,7 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[4]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
           </div>

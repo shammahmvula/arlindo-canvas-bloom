@@ -35,7 +35,7 @@ const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold }: Artw
         <p className="text-sm text-muted-foreground">{medium}</p>
         <p className="text-sm text-muted-foreground">{dimensions}</p>
         {price && !sold && (
-          <p className="text-base font-semibold text-accent">${price.toLocaleString()}</p>
+          <p className="text-base font-semibold text-accent">R{price.toLocaleString()}</p>
         )}
       </div>
     </Link>

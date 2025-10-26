@@ -11,7 +11,6 @@ import africanHeaddress from "@/assets/african-headdress.jpg";
 import blueHeaddress from "@/assets/blue-headdress.jpg";
 import portraitMedium from "@/assets/portrait-medium.jpg";
 import colorfulChildPortrait from "@/assets/colorful-child-portrait.jpg";
-import sweetSound from "@/assets/sweet-sound.jpg";
 
 // Featured Works for Gallery Section
 import graceInMotion from "@/assets/grace-in-motion.png";
@@ -254,28 +253,6 @@ const Home = () => {
                 />
               </Link>
             </motion.article>
-
-            {/* Artwork 7 - Sweet Sound (Medium, Bottom-Left) */}
-            <motion.article
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="absolute bottom-[8%] md:bottom-[10%] left-[8%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Sweet Sound artwork details"
-              >
-                <img
-                  src={sweetSound}
-                  alt="Sweet Sound - Mixed media on Fabriano paper by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-              </Link>
-            </motion.article>
           </div>
 
           {/* Mobile Layout - Vertical Stack */}
@@ -349,18 +326,6 @@ const Home = () => {
             >
               <Link to="/gallery" className="block w-full h-full">
                 <img src={portraitMedium} alt="Contemporary expressive portrait" loading="lazy" className="w-full h-full object-cover" />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 7 - Sweet Sound */}
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden mx-0 mr-auto"
-            >
-              <Link to="/gallery" className="block w-full h-full">
-                <img src={sweetSound} alt="Sweet Sound - Mixed media on Fabriano paper" loading="lazy" className="w-full h-full object-cover" />
               </Link>
             </motion.article>
           </div>

@@ -144,12 +144,12 @@ const Home = () => {
               </Link>
             </motion.article>
 
-            {/* Artwork 2 - Holy Bible (Medium, Bottom-Center) */}
+            {/* Artwork 2 - Holy Bible (Medium, Top-Right) */}
             <motion.article
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute bottom-[5%] left-[50%] translate-x-[-50%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
+              className="absolute top-[5%] right-[5%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
               role="article"
             >
               <Link 

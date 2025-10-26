@@ -84,17 +84,49 @@ const Home = () => {
       <Navbar />
       
       {/* Diagonal Split Grid Hero Section */}
-      <section className="bg-background py-16 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 md:px-8 lg:px-[60px] max-w-[1800px]">
-          {/* Diagonal Grid Container */}
-          <div className="relative w-full min-h-[600px] md:min-h-[800px] lg:min-h-[90vh] mb-12 md:mb-16 lg:mb-20">
+      <section className="relative bg-background overflow-hidden">
+        <div className="relative w-full h-[85vh] max-h-[900px]">
+          {/* Dark Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/50 z-[5]" />
+          
+          {/* Introductory Text Overlay */}
+          <div className="absolute inset-0 z-[15] flex flex-col items-center justify-center text-center px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="max-w-[900px]"
+            >
+              <h1 className="font-serif text-[48px] md:text-[64px] lg:text-[80px] font-bold mb-4 text-white tracking-[0.05em] leading-[1.1] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+                ARLINDO MAUNDE
+              </h1>
+              <p className="text-xl md:text-2xl lg:text-[28px] font-medium mb-3 text-white/95 tracking-[0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                Contemporary African Expressionist Art
+              </p>
+              <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                Celebrating Movement, Culture & Humanity Through Paint
+              </p>
+              <Link to="/gallery">
+                <Button 
+                  size="lg"
+                  className="bg-[#2C5FED] text-white hover:bg-[#1E4ACC] hover:shadow-[0_10px_24px_rgba(44,95,237,0.5)] hover:-translate-y-[3px] transition-all duration-300 px-10 md:px-12 py-5 md:py-[22px] text-base md:text-[18px] font-semibold rounded-[10px] shadow-[0_6px_16px_rgba(44,95,237,0.4)]"
+                >
+                  Explore Full Collection
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Diagonal Grid Container - Compressed */}
+          <div className="absolute inset-0 w-full h-full">
             
             {/* Artwork 1 - Hero Trumpet Player (Large, Top-Left) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="absolute top-0 left-[5%] w-[85%] md:w-[45%] lg:w-[30%] max-w-[600px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-10 overflow-hidden"
+              className="absolute top-[2%] left-[3%] w-[45%] md:w-[28%] lg:w-[24%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-10 overflow-hidden"
               role="article"
             >
               <Link 
@@ -115,10 +147,10 @@ const Home = () => {
 
             {/* Artwork 2 - Holy Bible (Medium, Top-Right) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-[20%] md:top-[15%] right-[5%] md:right-[10%] w-[75%] md:w-[35%] lg:w-[22%] max-w-[450px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-8 overflow-hidden"
+              className="absolute top-[8%] right-[8%] w-[38%] md:w-[22%] lg:w-[18%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-8 overflow-hidden"
               role="article"
             >
               <Link 
@@ -138,10 +170,10 @@ const Home = () => {
 
             {/* Artwork 3 - Cultural Portrait (Small, Middle-Left) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="absolute top-[40%] md:top-[40%] left-[8%] w-[65%] md:w-[28%] lg:w-[18%] max-w-[350px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
+              className="absolute top-[35%] left-[5%] w-[35%] md:w-[20%] lg:w-[15%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
               role="article"
             >
               <Link 
@@ -161,10 +193,10 @@ const Home = () => {
 
             {/* Artwork 4 - Blue Portrait (Medium, Middle-Center-Right) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute top-[55%] md:top-[35%] right-[8%] md:right-[18%] w-[80%] md:w-[38%] lg:w-[25%] max-w-[500px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-7 overflow-hidden"
+              className="absolute top-[30%] right-[15%] w-[42%] md:w-[24%] lg:w-[20%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-7 overflow-hidden"
               role="article"
             >
               <Link 
@@ -184,10 +216,10 @@ const Home = () => {
 
             {/* Artwork 5 - Portrait (Medium, Lower-Left) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="absolute top-[75%] md:top-[65%] left-[10%] md:left-[15%] w-[70%] md:w-[32%] lg:w-[23%] max-w-[450px] aspect-[4/5] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-5 overflow-hidden"
+              className="absolute top-[60%] left-[12%] w-[40%] md:w-[22%] lg:w-[18%] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-5 overflow-hidden"
               role="article"
             >
               <Link 
@@ -207,10 +239,10 @@ const Home = () => {
 
             {/* Artwork 6 - Contemporary Portrait (Medium, Lower-Center) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute top-[95%] md:top-[58%] left-[15%] md:left-[42%] w-[75%] md:w-[35%] lg:w-[24%] max-w-[480px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
+              className="absolute top-[52%] left-[38%] w-[42%] md:w-[23%] lg:w-[19%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
               role="article"
             >
               <Link 
@@ -230,10 +262,10 @@ const Home = () => {
 
             {/* Artwork 7 - Expressive Portrait (Medium-Large, Bottom-Right) */}
             <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.75 }}
-              className="absolute bottom-[5%] right-[5%] md:right-[8%] w-[80%] md:w-[40%] lg:w-[27%] max-w-[550px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-9 overflow-hidden"
+              className="absolute bottom-[3%] right-[6%] w-[45%] md:w-[26%] lg:w-[22%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-9 overflow-hidden"
               role="article"
             >
               <Link 
@@ -251,33 +283,6 @@ const Home = () => {
               </Link>
             </motion.article>
           </div>
-
-          {/* Text Section Below Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-center mt-12 md:mt-16 lg:mt-20 max-w-[900px] mx-auto"
-          >
-            <h1 className="font-serif text-[42px] md:text-5xl lg:text-[64px] font-bold mb-4 md:mb-5 text-foreground tracking-[0.05em] leading-[1.1]">
-              ARLINDO MAUNDE
-            </h1>
-            <p className="text-lg md:text-[22px] font-medium mb-3 text-foreground tracking-[0.01em]">
-              Contemporary African Expressionist Art
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed px-4">
-              Celebrating Movement, Culture & Humanity Through Paint
-            </p>
-            <Link to="/gallery">
-              <Button 
-                size="lg"
-                className="bg-[#2C5FED] text-white hover:bg-[#1E4ACC] hover:shadow-[0_10px_24px_rgba(44,95,237,0.4)] hover:-translate-y-[3px] transition-all duration-300 px-10 md:px-12 py-5 md:py-[18px] text-base md:text-[17px] font-semibold rounded-[10px] shadow-[0_4px_12px_rgba(44,95,237,0.3)]"
-              >
-                Explore Full Collection
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </motion.div>
         </div>
       </section>
 

@@ -118,7 +118,7 @@ const ArtworkDetail = () => {
 
               {artwork.price && !artwork.sold && (
                 <p className="text-3xl font-bold text-accent mb-8">
-                  ${artwork.price.toLocaleString()}
+                  R{artwork.price.toLocaleString()}
                 </p>
               )}
 

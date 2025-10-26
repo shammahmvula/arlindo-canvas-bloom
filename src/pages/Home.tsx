@@ -4,14 +4,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
+// Bento Box Hero Images from Cloudinary Collection
+import trumpetPlayer from "@/assets/trumpet-player.jpg";
+import holyBible from "@/assets/holy-bible.jpg";
+import africanHeaddress from "@/assets/african-headdress.jpg";
+import blueHeaddress from "@/assets/blue-headdress.jpg";
+import portraitMedium from "@/assets/portrait-medium.jpg";
+import portraitSmall from "@/assets/portrait-small.jpg";
+import smallPortrait from "@/assets/small-portrait.jpg";
+
+// Featured Works for Gallery Section
 import graceInMotion from "@/assets/grace-in-motion.png";
 import unspokenWeight from "@/assets/unspoken-weight.png";
 import lookingUpward from "@/assets/looking-upward.png";
 import eleganceUnbound from "@/assets/elegance-unbound.png";
-import portraitPower from "@/assets/portrait-power.jpg";
-import childhoodJoy from "@/assets/childhood-joy.jpg";
-import culturalCelebration from "@/assets/cultural-celebration.jpg";
-import contemplation from "@/assets/contemplation.jpg";
 import { ArrowRight } from "lucide-react";
 
 const Home = () => {
@@ -78,157 +84,139 @@ const Home = () => {
       <Navbar />
       
       {/* Bento Box Hero Section */}
-      <section className="bg-background py-16 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-[1400px]">
-          {/* Bento Box Grid */}
+      <section className="bg-background py-12 md:py-16 lg:py-20">
+        <div className="container mx-auto px-4 md:px-8 lg:px-10 max-w-[1400px]">
+          {/* Bento Box Grid - 4 columns × 4 rows */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-4 gap-4 lg:gap-5 auto-rows-[200px] lg:auto-rows-[minmax(200px,auto)]"
           >
-            {/* Position 1: Grace in Motion - Large (2x2) */}
+            {/* Position 1: Trumpet Player - HERO (2x2) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="lg:col-span-2 lg:row-span-2 group"
             >
-              <Link to="/artwork/2" className="block relative overflow-hidden rounded-xl h-full min-h-[300px] md:min-h-[400px] lg:min-h-[600px]">
+              <Link to="/gallery" className="block relative overflow-hidden rounded-2xl h-full min-h-[300px] shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 <img
-                  src={graceInMotion}
-                  alt="Grace in Motion - Ballet dancer with dramatic arm pose by Arlindo Maunde"
+                  src={trumpetPlayer}
+                  alt="Trumpet Player - Jazz musician looking upward with trumpet by Arlindo Maunde"
                   loading="eager"
                   fetchPriority="high"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.div>
 
-            {/* Position 2: Unspoken Weight - Medium */}
+            {/* Position 2: Holy Bible - Medium (1x1) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="group"
             >
-              <Link to="/artwork/3" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+              <Link to="/gallery" className="block relative overflow-hidden rounded-2xl h-full shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 <img
-                  src={unspokenWeight}
-                  alt="Unspoken Weight - Figure with hands covering face by Arlindo Maunde"
+                  src={holyBible}
+                  alt="Holy Bible - Spiritual figure with dripping paint effect by Arlindo Maunde"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.div>
 
-            {/* Position 3: Looking Upward - Medium */}
+            {/* Position 3: African Headdress - Medium (1x1) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="group"
             >
-              <Link to="/artwork/4" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+              <Link to="/gallery" className="block relative overflow-hidden rounded-2xl h-full shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 <img
-                  src={lookingUpward}
-                  alt="Looking Upward - Child with hopeful expression by Arlindo Maunde"
+                  src={africanHeaddress}
+                  alt="African Headdress - Cultural portrait with vibrant colors by Arlindo Maunde"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.div>
 
-            {/* Position 4: Elegance Unbound - Medium */}
+            {/* Position 4: Portrait Medium - Medium (1x1) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="group"
             >
-              <Link to="/artwork/5" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+              <Link to="/gallery" className="block relative overflow-hidden rounded-2xl h-full shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 <img
-                  src={eleganceUnbound}
-                  alt="Elegance Unbound - Woman in flowing dress by Arlindo Maunde"
+                  src={portraitMedium}
+                  alt="Contemporary Portrait - Expressive artwork by Arlindo Maunde"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.div>
 
-            {/* Position 5: Portrait Power - Large (2x1) */}
+            {/* Position 5: Blue Headdress - Large (2x1) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="lg:col-span-2 group"
             >
-              <Link to="/artwork/6" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+              <Link to="/gallery" className="block relative overflow-hidden rounded-2xl h-full shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 <img
-                  src={portraitPower}
-                  alt="Portrait with vibrant orange accents by Arlindo Maunde"
+                  src={blueHeaddress}
+                  alt="Blue Headdress - Striking portrait with blue accents by Arlindo Maunde"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.div>
 
-            {/* Position 6: Childhood Joy - Small */}
+            {/* Position 6: Portrait Small - Medium (1x1) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="group"
             >
-              <Link to="/gallery" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+              <Link to="/gallery" className="block relative overflow-hidden rounded-2xl h-full shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 <img
-                  src={childhoodJoy}
-                  alt="Childhood Joy - Children portrait by Arlindo Maunde"
+                  src={portraitSmall}
+                  alt="Intimate Portrait - Detailed artwork by Arlindo Maunde"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.div>
 
-            {/* Position 7: Cultural Celebration - Medium Wide (2x1) */}
+            {/* Position 7: Wide Bottom - Full Width (4x1) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="lg:col-span-2 group"
+              className="lg:col-span-4 group"
             >
-              <Link to="/gallery" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
+              <Link to="/gallery" className="block relative overflow-hidden rounded-2xl h-full max-h-[300px] shadow-sm hover:shadow-2xl transition-shadow duration-300">
                 <img
-                  src={culturalCelebration}
-                  alt="Cultural Celebration - Traditional dancer by Arlindo Maunde"
+                  src={smallPortrait}
+                  alt="Expressive Portrait - Contemporary artwork by Arlindo Maunde"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-            </motion.div>
-
-            {/* Position 8: Contemplation - Medium Wide (2x1) */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="lg:col-span-2 group"
-            >
-              <Link to="/gallery" className="block relative overflow-hidden rounded-xl h-full min-h-[250px] md:min-h-[300px]">
-                <img
-                  src={contemplation}
-                  alt="Contemplative artwork by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.div>
           </motion.div>
@@ -238,20 +226,22 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-center mt-16"
+            className="text-center mt-12 md:mt-16"
           >
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 text-foreground tracking-wide">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold mb-3 md:mb-4 text-foreground tracking-[0.02em]">
               ARLINDO MAUNDE
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              Contemporary African Expressionist Art<br />
-              Celebrating Movement, Culture & Humanity
+            <p className="text-lg md:text-xl font-medium mb-2 text-foreground">
+              Contemporary African Expressionist Art
+            </p>
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-8 leading-relaxed px-4">
+              Celebrating Movement, Culture & Humanity Through Paint
             </p>
             <Link to="/gallery">
               <Button 
                 variant="default" 
                 size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 hover:shadow-2xl transition-all duration-300 px-8 py-6 text-base font-semibold rounded-lg"
+                className="bg-[hsl(var(--primary))] text-primary-foreground hover:bg-[hsl(var(--primary))]/90 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 px-8 md:px-10 py-5 md:py-6 text-base font-semibold rounded-lg"
               >
                 Explore Full Collection
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -10,7 +10,7 @@ import holyBible from "@/assets/holy-bible.jpg";
 import africanHeaddress from "@/assets/african-headdress.jpg";
 import blueHeaddress from "@/assets/blue-headdress.jpg";
 import portraitMedium from "@/assets/portrait-medium.jpg";
-import colorfulChildPortrait from "@/assets/colorful-child-portrait.jpg";
+import colorfulChildPortrait from "@/assets/colorful-child-portrait-correct.jpg";
 
 // Featured Works for Gallery Section
 import graceInMotion from "@/assets/grace-in-motion.png";

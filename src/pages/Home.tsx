@@ -84,32 +84,35 @@ const Home = () => {
       <Navbar />
       
       {/* Diagonal Split Grid Hero Section */}
-      <section className="relative bg-background overflow-hidden">
-        <div className="relative w-full h-[85vh] max-h-[900px]">
+      <section className="relative bg-background overflow-visible">
+        <div className="relative w-full max-w-[1800px] mx-auto min-h-[85vh] px-4 md:px-10 lg:px-[60px] py-20 lg:py-[100px]">
+          {/* Smooth fade at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-[120px] bg-gradient-to-b from-transparent via-background/30 to-background pointer-events-none z-20" />
+          
           {/* Dark Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/50 z-[5]" />
+          <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
           
           {/* Introductory Text Overlay */}
-          <div className="absolute inset-0 z-[15] flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 z-[25] flex flex-col items-center justify-center text-center px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="max-w-[900px]"
             >
-              <h1 className="font-serif text-[48px] md:text-[64px] lg:text-[80px] font-bold mb-4 text-white tracking-[0.05em] leading-[1.1] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+              <h1 className="font-serif text-[38px] md:text-[52px] lg:text-[68px] font-bold mb-4 md:mb-6 text-white tracking-[0.05em] leading-[1.15] drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
                 ARLINDO MAUNDE
               </h1>
-              <p className="text-xl md:text-2xl lg:text-[28px] font-medium mb-3 text-white/95 tracking-[0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              <p className="text-lg md:text-xl lg:text-[20px] font-normal mb-3 md:mb-4 text-white/95 tracking-[0.01em] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] leading-[1.7]">
                 Contemporary African Expressionist Art
               </p>
-              <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
                 Celebrating Movement, Culture & Humanity Through Paint
               </p>
               <Link to="/gallery">
                 <Button 
                   size="lg"
-                  className="bg-[#2C5FED] text-white hover:bg-[#1E4ACC] hover:shadow-[0_10px_24px_rgba(44,95,237,0.5)] hover:-translate-y-[3px] transition-all duration-300 px-10 md:px-12 py-5 md:py-[22px] text-base md:text-[18px] font-semibold rounded-[10px] shadow-[0_6px_16px_rgba(44,95,237,0.4)]"
+                  className="bg-[#2C5FED] text-white hover:bg-[#1E4ACC] hover:shadow-[0_10px_30px_rgba(44,95,237,0.6)] hover:-translate-y-[3px] transition-all duration-300 px-10 md:px-12 py-4 md:py-[18px] text-base md:text-[18px] font-semibold rounded-[10px] shadow-[0_6px_20px_rgba(44,95,237,0.5)] uppercase tracking-[1.5px]"
                 >
                   Explore Full Collection
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -118,15 +121,15 @@ const Home = () => {
             </motion.div>
           </div>
 
-          {/* Diagonal Grid Container - Compressed */}
-          <div className="absolute inset-0 w-full h-full">
+          {/* Diagonal Grid Container - Desktop & Tablet */}
+          <div className="hidden md:block absolute inset-0 w-full h-full">
             
-            {/* Artwork 1 - Hero Trumpet Player (Large, Top-Left) */}
+            {/* Artwork 1 - Jazz Musician (Large, Top-Left) */}
             <motion.article
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="absolute top-[2%] left-[3%] w-[45%] md:w-[28%] lg:w-[24%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-10 overflow-hidden"
+              className="absolute top-[5%] left-[5%] w-[32%] lg:w-[24%] max-w-[480px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[8]"
               role="article"
             >
               <Link 
@@ -141,7 +144,6 @@ const Home = () => {
                   fetchPriority="high"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
@@ -150,7 +152,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-[8%] right-[8%] w-[38%] md:w-[22%] lg:w-[18%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-8 overflow-hidden"
+              className="absolute top-[5%] right-[5%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
               role="article"
             >
               <Link 
@@ -164,7 +166,6 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
@@ -173,7 +174,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="absolute top-[35%] left-[5%] w-[35%] md:w-[20%] lg:w-[15%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
+              className="absolute top-[38%] md:top-[35%] left-[2%] md:left-[3%] w-[25%] lg:w-[18%] max-w-[360px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[6]"
               role="article"
             >
               <Link 
@@ -187,7 +188,6 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
@@ -196,7 +196,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute top-[30%] right-[15%] w-[42%] md:w-[24%] lg:w-[20%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-7 overflow-hidden"
+              className="absolute top-[32%] md:top-[30%] right-[18%] md:right-[12%] w-[30%] lg:w-[22%] max-w-[440px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
               role="article"
             >
               <Link 
@@ -210,7 +210,6 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
@@ -219,7 +218,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="absolute top-[60%] left-[12%] w-[40%] md:w-[22%] lg:w-[18%] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-5 overflow-hidden"
+              className="absolute top-[62%] md:top-[60%] left-[22%] md:left-[20%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[5]"
               role="article"
             >
               <Link 
@@ -233,7 +232,6 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
@@ -242,7 +240,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute top-[52%] left-[38%] w-[42%] md:w-[23%] lg:w-[19%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
+              className="absolute top-[58%] left-[46%] md:left-[48%] w-[26%] lg:w-[19%] max-w-[380px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[6]"
               role="article"
             >
               <Link 
@@ -256,7 +254,6 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             </motion.article>
 
@@ -265,7 +262,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.75 }}
-              className="absolute bottom-[3%] right-[6%] w-[45%] md:w-[26%] lg:w-[22%] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-400 cursor-pointer group z-9 overflow-hidden"
+              className="absolute bottom-[5%] md:bottom-[8%] right-[8%] w-[32%] lg:w-[23%] max-w-[460px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[8]"
               role="article"
             >
               <Link 
@@ -279,7 +276,93 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.article>
+          </div>
+
+          {/* Mobile Layout - Vertical Stack */}
+          <div className="md:hidden relative w-full space-y-6 pt-[500px] pb-20">
+            {/* Artwork 1 - Jazz Musician */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden mx-0 mr-auto"
+            >
+              <Link to="/gallery" className="block w-full h-full">
+                <img src={trumpetPlayer} alt="Passionate trumpet player" loading="eager" className="w-full h-full object-cover" />
+              </Link>
+            </motion.article>
+
+            {/* Artwork 2 - Holy Bible */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-auto mr-0"
+            >
+              <Link to="/gallery" className="block w-full h-full">
+                <img src={holyBible} alt="Figure holding Holy Bible" loading="lazy" className="w-full h-full object-cover" />
+              </Link>
+            </motion.article>
+
+            {/* Artwork 3 - Cultural Portrait */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-[5%]"
+            >
+              <Link to="/gallery" className="block w-full h-full">
+                <img src={africanHeaddress} alt="Cultural portrait with African headdress" loading="lazy" className="w-full h-full object-cover" />
+              </Link>
+            </motion.article>
+
+            {/* Artwork 4 - Blue Portrait */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-auto mr-[5%]"
+            >
+              <Link to="/gallery" className="block w-full h-full">
+                <img src={blueHeaddress} alt="Elegant portrait with blue accents" loading="lazy" className="w-full h-full object-cover" />
+              </Link>
+            </motion.article>
+
+            {/* Artwork 5 - Portrait */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="w-[85%] max-w-[400px] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden mx-0 mr-auto"
+            >
+              <Link to="/gallery" className="block w-full h-full">
+                <img src={portraitSmall} alt="Intimate portrait" loading="lazy" className="w-full h-full object-cover" />
+              </Link>
+            </motion.article>
+
+            {/* Artwork 6 - Contemporary Portrait */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-auto mr-0"
+            >
+              <Link to="/gallery" className="block w-full h-full">
+                <img src={portraitMedium} alt="Contemporary expressive portrait" loading="lazy" className="w-full h-full object-cover" />
+              </Link>
+            </motion.article>
+
+            {/* Artwork 7 - Expressive Portrait */}
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-[10%]"
+            >
+              <Link to="/gallery" className="block w-full h-full">
+                <img src={smallPortrait} alt="Expressive contemporary portrait" loading="lazy" className="w-full h-full object-cover" />
               </Link>
             </motion.article>
           </div>

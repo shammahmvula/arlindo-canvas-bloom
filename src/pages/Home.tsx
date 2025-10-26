@@ -83,18 +83,18 @@ const Home = () => {
     <>
       <Navbar />
       
-      {/* Hero Spotlight Grid Section */}
-      <section className="bg-background py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-[60px] max-w-[1600px]">
-          {/* Hero Spotlight Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] lg:grid-cols-[2fr_1fr_1fr] grid-rows-[auto] md:grid-rows-[repeat(4,auto)] lg:grid-rows-[repeat(3,1fr)] gap-4 md:gap-5 lg:gap-6 min-h-[400px] lg:min-h-[85vh]">
+      {/* Diagonal Split Grid Hero Section */}
+      <section className="bg-background py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 md:px-8 lg:px-[60px] max-w-[1800px]">
+          {/* Diagonal Grid Container */}
+          <div className="relative w-full min-h-[600px] md:min-h-[800px] lg:min-h-[90vh] mb-12 md:mb-16 lg:mb-20">
             
-            {/* Hero Artwork - Trumpet Player */}
+            {/* Artwork 1 - Hero Trumpet Player (Large, Top-Left) */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="relative overflow-hidden rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group col-span-1 row-span-1 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-3 min-h-[450px] md:min-h-full"
+              className="absolute top-0 left-[5%] w-[85%] md:w-[45%] lg:w-[30%] max-w-[600px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-10 overflow-hidden"
               role="article"
             >
               <Link 
@@ -113,12 +113,12 @@ const Home = () => {
               </Link>
             </motion.article>
 
-            {/* Position 2: Holy Bible */}
+            {/* Artwork 2 - Holy Bible (Medium, Top-Right) */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative overflow-hidden rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group min-h-[250px] md:min-h-full lg:col-start-2 lg:row-start-1"
+              className="absolute top-[20%] md:top-[15%] right-[5%] md:right-[10%] w-[75%] md:w-[35%] lg:w-[22%] max-w-[450px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-8 overflow-hidden"
               role="article"
             >
               <Link 
@@ -136,12 +136,12 @@ const Home = () => {
               </Link>
             </motion.article>
 
-            {/* Position 3: African Headdress */}
+            {/* Artwork 3 - Cultural Portrait (Small, Middle-Left) */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative overflow-hidden rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group min-h-[250px] md:min-h-full lg:col-start-3 lg:row-start-1"
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="absolute top-[40%] md:top-[40%] left-[8%] w-[65%] md:w-[28%] lg:w-[18%] max-w-[350px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
               role="article"
             >
               <Link 
@@ -159,12 +159,12 @@ const Home = () => {
               </Link>
             </motion.article>
 
-            {/* Position 4: Blue Headdress */}
+            {/* Artwork 4 - Blue Portrait (Medium, Middle-Center-Right) */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative overflow-hidden rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group min-h-[250px] md:min-h-full lg:col-start-2 lg:row-start-2"
+              className="absolute top-[55%] md:top-[35%] right-[8%] md:right-[18%] w-[80%] md:w-[38%] lg:w-[25%] max-w-[500px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-7 overflow-hidden"
               role="article"
             >
               <Link 
@@ -182,12 +182,35 @@ const Home = () => {
               </Link>
             </motion.article>
 
-            {/* Position 5: Portrait Medium */}
+            {/* Artwork 5 - Portrait (Medium, Lower-Left) */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative overflow-hidden rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group min-h-[250px] md:min-h-full lg:col-start-3 lg:row-start-2"
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="absolute top-[75%] md:top-[65%] left-[10%] md:left-[15%] w-[70%] md:w-[32%] lg:w-[23%] max-w-[450px] aspect-[4/5] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-5 overflow-hidden"
+              role="article"
+            >
+              <Link 
+                to="/gallery" 
+                className="block w-full h-full"
+                aria-label="View Portrait artwork details"
+              >
+                <img
+                  src={portraitSmall}
+                  alt="Intimate portrait with emotional depth by Arlindo Maunde"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            </motion.article>
+
+            {/* Artwork 6 - Contemporary Portrait (Medium, Lower-Center) */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="absolute top-[95%] md:top-[58%] left-[15%] md:left-[42%] w-[75%] md:w-[35%] lg:w-[24%] max-w-[480px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-6 overflow-hidden"
               role="article"
             >
               <Link 
@@ -205,35 +228,12 @@ const Home = () => {
               </Link>
             </motion.article>
 
-            {/* Position 6: Portrait Small */}
+            {/* Artwork 7 - Expressive Portrait (Medium-Large, Bottom-Right) */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="relative overflow-hidden rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group min-h-[250px] md:min-h-full lg:col-start-2 lg:row-start-3"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Intimate Portrait artwork details"
-              >
-                <img
-                  src={portraitSmall}
-                  alt="Intimate portrait with emotional depth by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-            </motion.article>
-
-            {/* Position 7: Small Portrait */}
-            <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="relative overflow-hidden rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group min-h-[250px] md:min-h-full lg:col-start-3 lg:row-start-3"
+              transition={{ duration: 0.8, delay: 0.75 }}
+              className="absolute bottom-[5%] right-[5%] md:right-[8%] w-[80%] md:w-[40%] lg:w-[27%] max-w-[550px] aspect-[3/4] rounded-[20px] shadow-[0_2px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] transition-all duration-400 cursor-pointer group z-9 overflow-hidden"
               role="article"
             >
               <Link 

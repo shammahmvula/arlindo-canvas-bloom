@@ -117,7 +117,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: "7",
-    title: "Evening Elegance",
+    title: "Sophisticated Serenity",
     image: womanElegantDress,
     category: "feminine",
     medium: "Mixed media on Fabriano paper",
@@ -259,17 +259,6 @@ export const artworks: Artwork[] = [
     description: "An intricate head wrap frames a face of quiet dignity and pride. This piece honors the artistry of traditional adornment and the stories carried in cultural dress.",
   },
   {
-    id: "20",
-    title: "Pianist's Meditation",
-    image: sixoloPiano,
-    category: "musical",
-    medium: "Mixed media on Fabriano paper",
-    dimensions: "110 × 80 cm (43.3 × 31.5 inches)",
-    year: 2024,
-    price: 18500,
-    description: "A contemplative musician at the piano, lost in composition. This piece explores the intimate relationship between artist and instrument, where keys become language and melody becomes truth.",
-  },
-  {
     id: "21",
     title: "Self Reflection",
     image: myselfAndI,
@@ -359,14 +348,14 @@ export const artworks: Artwork[] = [
   },
   {
     id: "29",
-    title: "Guitar Stories",
+    title: "Freedom Ride",
     image: womanBicycle,
-    category: "musical",
+    category: "daily",
     medium: "Mixed media on Fabriano paper",
     dimensions: "150 × 110 cm (59.1 × 43.3 inches)",
     year: 2024,
     price: 28500,
-    description: "A guitarist sits in quiet concentration, fingers on strings ready to tell stories through music. This intimate piece celebrates the personal relationship between musician and instrument.",
+    description: "A joyful moment captured as a woman rides through her day. This piece celebrates the simple pleasures of movement, independence, and the beauty found in everyday moments of freedom.",
   },
   {
     id: "30",
@@ -433,17 +422,6 @@ export const artworks: Artwork[] = [
     year: 2024,
     price: 6500,
     description: "Captured in a moment of innocent contemplation, this child portrait radiates pure wonder. Color bursts frame the face like the excitement of discovery, celebrating the magic of seeing the world anew.",
-  },
-  {
-    id: "36",
-    title: "Future Gazing",
-    image: childFromBehind,
-    category: "childhood",
-    medium: "Mixed media on Fabriano paper",
-    dimensions: "50 × 35 cm (19.7 × 13.8 inches)",
-    year: 2024,
-    price: 6500,
-    description: "A child stands gazing toward the horizon, embodying hope and limitless possibility. This contemplative piece explores dreams, potential, and the journey ahead.",
   },
 ];
 

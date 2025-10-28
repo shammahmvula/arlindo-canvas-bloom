@@ -349,7 +349,7 @@ export const artworks: Artwork[] = [
   {
     id: "28",
     title: "Freedom Ride",
-    image: womanBicycle,
+    image: sweetSoundGuitar,
     category: "daily",
     medium: "Mixed media on Fabriano paper",
     dimensions: "150 × 110 cm (59.1 × 43.3 inches)",
@@ -360,7 +360,7 @@ export const artworks: Artwork[] = [
   {
     id: "29",
     title: "Guitar Stories",
-    image: sweetSoundGuitar,
+    image: womanBicycle,
     category: "musical",
     medium: "Mixed media on Fabriano paper",
     dimensions: "150 × 110 cm (59.1 × 43.3 inches)",

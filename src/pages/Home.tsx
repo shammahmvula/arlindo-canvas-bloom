@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
 // Bento Box Hero Images from Cloudinary Collection
 import trumpetPlayer from "@/assets/trumpet-player.jpg";
+import trumpetPlayerLookingUp from "@/assets/gallery/trumpet-player-looking-up.jpg";
 import holyBible from "@/assets/holy-bible.jpg";
 import africanHeaddress from "@/assets/african-headdress.jpg";
 import blueHeaddress from "@/assets/blue-headdress.jpg";
@@ -82,8 +83,45 @@ const Home = () => {
     <>
       <Navbar />
       
-      {/* Diagonal Split Grid Hero Section */}
-      <section className="relative bg-background overflow-visible">
+      {/* Mobile Hero Section - Single Image */}
+      <section className="md:hidden relative bg-background overflow-hidden h-screen">
+        <img 
+          src={trumpetPlayerLookingUp}
+          alt="Trumpet Dreams by Arlindo Maunde - Jazz musician looking upward"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h1 className="font-serif text-[42px] font-bold mb-4 text-white tracking-[0.05em] leading-[1.2] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+              ARLINDO MAUNDE
+            </h1>
+            <p className="text-base font-normal mb-3 text-white/95 tracking-[0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-[1.6]">
+              Contemporary African Expressionist Art
+            </p>
+            <p className="text-base text-white/90 max-w-md mx-auto mb-6 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              Celebrating Movement, Culture & Humanity Through Paint
+            </p>
+            <Link to="/gallery">
+              <Button 
+                size="lg"
+                className="bg-[#2C5FED] text-white hover:bg-[#1E4ACC] hover:shadow-[0_10px_30px_rgba(44,95,237,0.6)] transition-all duration-300 px-9 py-4 text-base font-semibold rounded-[10px] shadow-[0_6px_20px_rgba(44,95,237,0.5)] uppercase tracking-[1.5px]"
+              >
+                EXPLORE FULL COLLECTION →
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Diagonal Split Grid Hero Section - Desktop & Tablet */}
+      <section className="hidden md:block relative bg-background overflow-visible">
         <div className="relative w-full mx-auto min-h-[85vh] px-4 md:px-10 lg:px-[60px] pt-20 pb-[120px] md:pb-[140px] lg:pt-[100px] lg:pb-[180px]">
           
           {/* Dark Overlay for Text Readability */}
@@ -255,85 +293,11 @@ const Home = () => {
             </motion.article>
           </div>
 
-          {/* Mobile Layout - Vertical Stack */}
-          <div className="md:hidden relative w-full space-y-6 pt-[500px] pb-20">
-            {/* Artwork 1 - Jazz Musician */}
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden mx-0 mr-auto"
-            >
-              <Link to="/gallery" className="block w-full h-full">
-                <img src={trumpetPlayer} alt="Passionate trumpet player" loading="eager" className="w-full h-full object-cover" />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 2 - Holy Bible */}
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-auto mr-0"
-            >
-              <Link to="/gallery" className="block w-full h-full">
-                <img src={holyBible} alt="Figure holding Holy Bible" loading="lazy" className="w-full h-full object-cover" />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 3 - Cultural Portrait */}
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-[5%]"
-            >
-              <Link to="/gallery" className="block w-full h-full">
-                <img src={africanHeaddress} alt="Cultural portrait with African headdress" loading="lazy" className="w-full h-full object-cover" />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 4 - Blue Portrait */}
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-auto mr-[5%]"
-            >
-              <Link to="/gallery" className="block w-full h-full">
-                <img src={blueHeaddress} alt="Elegant portrait with blue accents" loading="lazy" className="w-full h-full object-cover" />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 5 - Colorful Child Portrait */}
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="w-[85%] max-w-[400px] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden mx-0 mr-auto"
-            >
-              <Link to="/gallery" className="block w-full h-full">
-                <img src={colorfulChildPortrait} alt="Vibrant colorful child portrait" loading="lazy" className="w-full h-full object-cover" />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 6 - Contemporary Portrait */}
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="w-[85%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] overflow-hidden ml-auto mr-0"
-            >
-              <Link to="/gallery" className="block w-full h-full">
-                <img src={portraitMedium} alt="Contemporary expressive portrait" loading="lazy" className="w-full h-full object-cover" />
-              </Link>
-            </motion.article>
-          </div>
         </div>
       </section>
 
       {/* Featured Collections */}
-      <section className="pt-[40vh] md:pt-[35vh] lg:pt-[30vh] pb-20 bg-background">
+      <section className="pt-12 md:pt-[35vh] lg:pt-[30vh] pb-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

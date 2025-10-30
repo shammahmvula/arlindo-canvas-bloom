@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
 // Hero Images - Three Featured Artworks
 import trumpetPlayerLookingUp from "@/assets/gallery/trumpet-player-looking-up.jpg";
-import soulfulSerenade from "@/assets/soulful-serenade.png";
+import childLookingUp from "@/assets/child-looking-up.png";
 import africanHeaddress from "@/assets/african-headdress.jpg";
 
 // Featured Works for Gallery Section
@@ -131,11 +131,11 @@ const Home = () => {
             />
           </div>
 
-          {/* Image 2: Soulful Serenade (Brown/Ochre Trumpet) */}
+          {/* Image 2: Child Looking Up */}
           <div className="flex-1 h-full overflow-hidden relative group">
             <img 
-              src={soulfulSerenade}
-              alt="Soulful Serenade - Trumpet player in warm ochre tones by Arlindo Maunde"
+              src={childLookingUp}
+              alt="Child Looking Up - Young child gazing upward, contemporary portrait by Arlindo Maunde"
               loading="eager"
               fetchPriority="high"
               className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"

@@ -325,33 +325,131 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="py-20 bg-gradient-to-br from-accent/10 via-vibrant/10 to-magenta/10">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Stay Connected
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Be first to view new works and exclusive releases
+      {/* Email Capture Section */}
+      <section className="email-capture-section">
+        <div className="email-capture-container">
+          <div className="email-capture-content">
+            
+            {/* Heading */}
+            <h2 className="email-heading">Stay Connected with Arlindo Maunde</h2>
+            <p className="email-description">
+              Join our exclusive mailing list to receive updates on new artworks, upcoming exhibitions, and special offers. Be the first to know about Arlindo's latest creations.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 max-w-md px-4 py-3 rounded-md border border-input focus:outline-none focus:ring-2 focus:ring-accent"
-              />
-              <Button variant="hero" size="lg" type="submit">
-                Subscribe
-              </Button>
+            
+            {/* Email Form */}
+            <form 
+              id="emailCaptureForm"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSe25ahvo4RrujKck-dQowJW6IUsDwHCG64aG215xCteRDQMXQ/formResponse" 
+              method="POST" 
+              target="hidden_iframe"
+              className="email-form"
+              onSubmit={(e) => {
+                const form = e.currentTarget;
+                const submitButton = form.querySelector('.email-submit-button') as HTMLButtonElement;
+                const buttonText = submitButton?.querySelector('.button-text') as HTMLElement;
+                const buttonLoading = submitButton?.querySelector('.button-loading') as HTMLElement;
+                
+                if (submitButton && buttonText && buttonLoading) {
+                  submitButton.disabled = true;
+                  buttonText.style.display = 'none';
+                  buttonLoading.style.display = 'inline-flex';
+                }
+                
+                (window as any).submitted = true;
+              }}
+            >
+              <div className="form-row">
+                
+                {/* Email Input */}
+                <input 
+                  type="email" 
+                  name="entry.1045161250"
+                  id="emailInput"
+                  placeholder="Enter your email address" 
+                  required
+                  className="email-input"
+                  aria-label="Email address"
+                  onInput={(e) => {
+                    const input = e.currentTarget;
+                    if (input.value && !input.validity.valid) {
+                      input.style.borderColor = 'rgba(255, 107, 107, 0.8)';
+                    } else {
+                      input.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                    }
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+                  }}
+                />
+                
+                {/* Submit Button */}
+                <button type="submit" className="email-submit-button">
+                  <span className="button-text">Subscribe</span>
+                  <span className="button-loading" style={{ display: 'none' }}>
+                    <svg className="spinner" viewBox="0 0 24 24" width="20" height="20">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="32" strokeLinecap="round">
+                        <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                      </circle>
+                    </svg>
+                  </span>
+                </button>
+                
+              </div>
+              
+              {/* Privacy Note */}
+              <p className="privacy-note">
+                We respect your privacy. Unsubscribe at any time. No spam, ever.
+              </p>
             </form>
-          </motion.div>
+            
+            {/* Success Message (Hidden Initially) */}
+            <div className="success-message" id="successMessage">
+              <div className="success-icon">
+                <svg className="checkmark" viewBox="0 0 52 52" width="80" height="80">
+                  <circle className="checkmark-circle" cx="26" cy="26" r="25" fill="none" stroke="#FFFFFF" strokeWidth="2"/>
+                  <path className="checkmark-check" fill="none" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+              </div>
+              <h3 className="success-title">Welcome to Our Community!</h3>
+              <p className="success-text">
+                Thank you for subscribing! You'll receive updates about new artworks and exhibitions directly in your inbox.
+              </p>
+            </div>
+            
+            {/* Hidden iframe to prevent page redirect */}
+            <iframe 
+              name="hidden_iframe" 
+              id="hidden_iframe" 
+              style={{ display: 'none' }} 
+              onLoad={() => {
+                if ((window as any).submitted) {
+                  const form = document.getElementById('emailCaptureForm');
+                  const successMessage = document.getElementById('successMessage');
+                  
+                  if (form && successMessage) {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                  }
+                  
+                  (window as any).submitted = false;
+                  
+                  // Optional: Track conversion with analytics
+                  if (typeof (window as any).gtag !== 'undefined') {
+                    (window as any).gtag('event', 'email_signup', {
+                      'event_category': 'engagement',
+                      'event_label': 'Newsletter Subscription'
+                    });
+                  }
+                  
+                  // Optional: Facebook Pixel tracking
+                  if (typeof (window as any).fbq !== 'undefined') {
+                    (window as any).fbq('track', 'Lead');
+                  }
+                }
+              }}
+            />
+            
+          </div>
         </div>
       </section>
 

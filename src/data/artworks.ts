@@ -35,10 +35,17 @@ import smallChildPortrait2 from "@/assets/gallery/small-child-portrait-2.jpg";
 import smallChildPortrait3 from "@/assets/gallery/small-child-portrait-3.jpg";
 import childFromBehind from "@/assets/gallery/child-from-behind.jpg";
 
+export interface ArtworkImage {
+  main: string;
+  thumbnail: string;
+  alt: string;
+}
+
 export interface Artwork {
   id: string;
   title: string;
   image: string;
+  images?: ArtworkImage[];
   category: string;
   medium: string;
   dimensions: string;

@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Share2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ArtworkCard from "@/components/ArtworkCard";
+import ArtworkGallery from "@/components/ArtworkGallery";
 import OptimizedImage from "@/components/OptimizedImage";
 import { artworks } from "@/data/artworks";
 import { useToast } from "@/hooks/use-toast";
@@ -37,6 +38,15 @@ const ArtworkDetail = () => {
     .filter((art) => art.category === artwork.category && art.id !== artwork.id)
     .slice(0, 3);
 
+  // Prepare gallery images
+  const galleryImages = artwork.images || [
+    {
+      main: artwork.image,
+      thumbnail: artwork.image,
+      alt: `${artwork.title} - ${artwork.medium} by Arlindo Maunde, ${artwork.year}`
+    }
+  ];
+
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
     toast({
@@ -66,23 +76,16 @@ const ArtworkDetail = () => {
 
           {/* Artwork Detail */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            {/* Image */}
+            {/* Gallery */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <OptimizedImage
-                src={artwork.image}
-                alt={`${artwork.title} - ${artwork.medium} by Arlindo Maunde, ${artwork.year}`}
-                className="w-full h-auto rounded-lg shadow-2xl"
-                priority={true}
-                aspectRatio="4/5"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              <ArtworkGallery images={galleryImages} title={artwork.title} />
               {artwork.sold && (
-                <Badge className="absolute top-4 right-4 bg-gold text-gold-foreground text-base px-4 py-2">
+                <Badge className="absolute top-4 right-4 bg-gold text-gold-foreground text-base px-4 py-2 z-10">
                   SOLD
                 </Badge>
               )}

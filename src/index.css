@@ -116,4 +116,32 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Image optimization for faster rendering */
+  img {
+    content-visibility: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* GPU acceleration for transforms */
+  [class*="group-hover:scale"],
+  [class*="hover:scale"],
+  [class*="transition-transform"] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  /* Optimize animations */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

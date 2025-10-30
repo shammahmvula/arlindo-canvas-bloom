@@ -7,6 +7,8 @@ interface OptimizedImageProps {
   className?: string;
   priority?: boolean;
   aspectRatio?: string;
+  sizes?: string;
+  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
 }
 
 const OptimizedImage = ({ 
@@ -14,7 +16,9 @@ const OptimizedImage = ({
   alt, 
   className, 
   priority = false,
-  aspectRatio = "auto"
+  aspectRatio = "auto",
+  sizes = "100vw",
+  objectFit = "cover"
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -35,10 +39,12 @@ const OptimizedImage = ({
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         decoding={priority ? "sync" : "async"}
+        sizes={sizes}
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
         className={cn(
-          "w-full h-full object-cover transition-opacity duration-500",
+          "w-full h-full transition-opacity duration-500",
+          `object-${objectFit}`,
           isLoaded ? "opacity-100" : "opacity-0",
           hasError && "hidden"
         )}

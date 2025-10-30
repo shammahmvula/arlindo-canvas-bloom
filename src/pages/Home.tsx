@@ -87,6 +87,8 @@ const Home = () => {
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
+          decoding="sync"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
@@ -127,7 +129,9 @@ const Home = () => {
               alt="Trumpet Dreams - Jazz musician looking upward, contemporary African expressionist painting by Arlindo Maunde"
               loading="eager"
               fetchPriority="high"
-              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+              decoding="sync"
+              sizes="33vw"
+              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105 will-change-transform"
             />
           </div>
 
@@ -138,7 +142,9 @@ const Home = () => {
               alt="Child Looking Up - Young child gazing upward, contemporary portrait by Arlindo Maunde"
               loading="eager"
               fetchPriority="high"
-              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+              decoding="sync"
+              sizes="33vw"
+              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105 will-change-transform"
             />
           </div>
 
@@ -149,7 +155,9 @@ const Home = () => {
               alt="Regal Heritage - Woman with elaborate headdress, cultural portrait by Arlindo Maunde"
               loading="eager"
               fetchPriority="high"
-              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+              decoding="sync"
+              sizes="33vw"
+              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105 will-change-transform"
             />
           </div>
         </div>

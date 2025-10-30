@@ -79,6 +79,7 @@ const ArtworkDetail = () => {
                 className="w-full h-auto rounded-lg shadow-2xl"
                 priority={true}
                 aspectRatio="4/5"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {artwork.sold && (
                 <Badge className="absolute top-4 right-4 bg-gold text-gold-foreground text-base px-4 py-2">

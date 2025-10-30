@@ -39,6 +39,7 @@ const About = () => {
                 className="w-full h-auto rounded-lg shadow-2xl"
                 priority={true}
                 aspectRatio="auto"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>
 

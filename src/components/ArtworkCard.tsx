@@ -21,6 +21,7 @@ const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold }: Artw
           alt={`${title} - Mixed media painting by Arlindo Maunde`}
           className="w-full h-auto rounded-lg transition-transform duration-500 group-hover:scale-105"
           aspectRatio="4/5"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         {sold && (
           <Badge className="absolute top-4 right-4 bg-gold text-gold-foreground">

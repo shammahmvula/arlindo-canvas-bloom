@@ -361,14 +361,14 @@ const Home = () => {
               <div className="form-row">
                 
                 {/* Email Input */}
-                <input 
-                  type="email" 
-                  name="entry.1045161250"
-                  id="emailInput"
-                  placeholder="Enter your email address" 
-                  required
-                  className="email-input"
-                  aria-label="Email address"
+              <input 
+                type="email" 
+                name="entry.559066553"
+                id="emailInput"
+                placeholder="Enter your email address" 
+                required
+                className="email-input"
+                aria-label="Email address"
                   onInput={(e) => {
                     const input = e.currentTarget;
                     if (input.value && !input.validity.valid) {

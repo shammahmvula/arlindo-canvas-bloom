@@ -4,14 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
-// Bento Box Hero Images from Cloudinary Collection
-import trumpetPlayer from "@/assets/trumpet-player.jpg";
+// Hero Images - Three Featured Artworks
 import trumpetPlayerLookingUp from "@/assets/gallery/trumpet-player-looking-up.jpg";
-import holyBible from "@/assets/holy-bible.jpg";
+import soulfulSerenade from "@/assets/soulful-serenade.png";
 import africanHeaddress from "@/assets/african-headdress.jpg";
-import blueHeaddress from "@/assets/blue-headdress.jpg";
-import portraitMedium from "@/assets/portrait-medium.jpg";
-import colorfulChildPortrait from "@/assets/colorful-child-portrait.jpg";
 
 // Featured Works for Gallery Section
 import graceInMotion from "@/assets/grace-in-motion.png";
@@ -120,184 +116,97 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Diagonal Split Grid Hero Section - Desktop & Tablet */}
-      <section className="hidden md:block relative bg-background overflow-visible">
-        <div className="relative w-full mx-auto min-h-[85vh] px-4 md:px-10 lg:px-[60px] pt-20 pb-[120px] md:pb-[140px] lg:pt-[100px] lg:pb-[180px]">
-          
-          {/* Dark Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none h-[120%]" />
-          
-          {/* Introductory Text Overlay */}
-          <div className="absolute inset-0 z-[25] flex flex-col items-center justify-center text-center px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="max-w-[900px]"
-            >
-              <h1 className="font-serif text-[38px] md:text-[52px] lg:text-[68px] font-bold mb-4 md:mb-6 text-white tracking-[0.05em] leading-[1.15] drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
-                ARLINDO MAUNDE
-              </h1>
-              <p className="text-lg md:text-xl lg:text-[20px] font-normal mb-3 md:mb-4 text-white/95 tracking-[0.01em] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] leading-[1.7]">
-                Contemporary African Expressionist Art
-              </p>
-              <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-                Celebrating Movement, Culture & Humanity Through Paint
-              </p>
-              <Link to="/gallery">
-                <Button 
-                  size="lg"
-                  className="bg-[#2C5FED] text-white hover:bg-[#1E4ACC] hover:shadow-[0_10px_30px_rgba(44,95,237,0.6)] hover:-translate-y-[3px] transition-all duration-300 px-10 md:px-12 py-4 md:py-[18px] text-base md:text-[18px] font-semibold rounded-[10px] shadow-[0_6px_20px_rgba(44,95,237,0.5)] uppercase tracking-[1.5px]"
-                >
-                  Explore Full Collection
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-            </motion.div>
+      {/* Three-Image Row Hero Section - Desktop & Tablet */}
+      <section className="hidden md:block relative bg-[#1A1A1A] overflow-hidden h-[85vh] min-h-[600px] max-h-[900px]">
+        {/* Three-image row */}
+        <div className="flex w-full h-full">
+          {/* Image 1: Trumpet Dreams (Looking Upward) */}
+          <div className="flex-1 h-full overflow-hidden relative group">
+            <img 
+              src={trumpetPlayerLookingUp}
+              alt="Trumpet Dreams - Jazz musician looking upward, contemporary African expressionist painting by Arlindo Maunde"
+              loading="eager"
+              fetchPriority="high"
+              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+            />
           </div>
 
-          {/* Diagonal Grid Container - Desktop & Tablet */}
-          <div className="hidden md:block absolute inset-0 w-full h-full">
-            
-            {/* Artwork 1 - Jazz Musician (Large, Top-Left) */}
-            <motion.article
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="absolute top-[5%] left-[5%] w-[32%] lg:w-[24%] max-w-[480px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[8]"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Trumpet Player artwork details"
-              >
-                <img
-                  src={trumpetPlayer}
-                  alt="Passionate trumpet player looking upward - Contemporary African expressionist painting by Arlindo Maunde"
-                  loading="eager"
-                  fetchPriority="high"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 2 - Holy Bible (Medium, Top-Right) */}
-            <motion.article
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-[5%] right-[5%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Holy Bible artwork details"
-              >
-                <img
-                  src={holyBible}
-                  alt="Figure holding Holy Bible with dripping paint effect - Spiritual artwork by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 3 - Cultural Portrait (Small, Middle-Left) */}
-            <motion.article
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="absolute top-[38%] md:top-[35%] left-[2%] md:left-[3%] w-[25%] lg:w-[18%] max-w-[360px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[6]"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Cultural Portrait artwork details"
-              >
-                <img
-                  src={africanHeaddress}
-                  alt="Cultural portrait with vibrant African headdress - Mixed media by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 4 - Blue Portrait (Medium, Middle-Center-Right) */}
-            <motion.article
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute top-[32%] md:top-[30%] right-[18%] md:right-[12%] w-[30%] lg:w-[22%] max-w-[440px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[7]"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Blue Portrait artwork details"
-              >
-                <img
-                  src={blueHeaddress}
-                  alt="Elegant portrait with blue accents and flowing composition by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 5 - Colorful Child Portrait (Medium, Lower-Left) */}
-            <motion.article
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-              className="absolute top-[62%] md:top-[60%] left-[22%] md:left-[20%] w-[28%] lg:w-[20%] max-w-[400px] aspect-[4/5] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[5]"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Colorful Child Portrait artwork details"
-              >
-                <img
-                  src={colorfulChildPortrait}
-                  alt="Vibrant colorful portrait of a young child with expressive eyes by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-              </Link>
-            </motion.article>
-
-            {/* Artwork 6 - Contemporary Portrait (Medium-Large, Bottom-Right) */}
-            <motion.article
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute bottom-[5%] md:bottom-[8%] right-[8%] w-[32%] lg:w-[23%] max-w-[460px] aspect-[3/4] rounded-[16px] shadow-[0_4px_16px_rgba(0,0,0,0.12)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.25)] hover:scale-105 hover:translate-y-[-8px] hover:z-[100] transition-all duration-400 cursor-pointer group overflow-hidden z-[8]"
-              role="article"
-            >
-              <Link 
-                to="/gallery" 
-                className="block w-full h-full"
-                aria-label="View Contemporary Portrait artwork details"
-              >
-                <img
-                  src={portraitMedium}
-                  alt="Contemporary expressive portrait - Mixed media artwork by Arlindo Maunde"
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
-                />
-              </Link>
-            </motion.article>
+          {/* Image 2: Soulful Serenade (Brown/Ochre Trumpet) */}
+          <div className="flex-1 h-full overflow-hidden relative group">
+            <img 
+              src={soulfulSerenade}
+              alt="Soulful Serenade - Trumpet player in warm ochre tones by Arlindo Maunde"
+              loading="eager"
+              fetchPriority="high"
+              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+            />
           </div>
 
+          {/* Image 3: Regal Heritage (Woman with Headdress) */}
+          <div className="flex-1 h-full overflow-hidden relative group">
+            <img 
+              src={africanHeaddress}
+              alt="Regal Heritage - Woman with elaborate headdress, cultural portrait by Arlindo Maunde"
+              loading="eager"
+              fetchPriority="high"
+              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+            />
+          </div>
+        </div>
+
+        {/* Dark overlay across all three images */}
+        <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+
+        {/* Text content centered over the images */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center max-w-[900px] px-10 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h1 className="font-serif text-[56px] lg:text-[72px] font-bold mb-5 text-white tracking-[4px] leading-[1.1] drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
+              ARLINDO MAUNDE
+            </h1>
+          </motion.div>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-2xl font-medium mb-3 text-white tracking-[1px] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
+          >
+            Contemporary African Expressionist Art
+          </motion.p>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-lg font-normal mb-9 text-white/95 leading-[1.6] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
+          >
+            Celebrating Movement, Culture & Humanity Through Paint
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          >
+            <Link to="/gallery">
+              <Button 
+                size="lg"
+                className="bg-[#2C5FED] text-white hover:bg-[#1E4ACC] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(44,95,237,0.6)] transition-all duration-300 px-[50px] py-5 text-lg font-semibold rounded-xl shadow-[0_6px_20px_rgba(44,95,237,0.5)] uppercase tracking-[1.5px]"
+                aria-label="Explore Arlindo Maunde's full art collection"
+              >
+                EXPLORE FULL COLLECTION →
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Collections */}
-      <section className="pt-12 md:pt-[35vh] lg:pt-[30vh] pb-20 bg-background">
+      <section className="pt-12 md:pt-[100px] pb-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

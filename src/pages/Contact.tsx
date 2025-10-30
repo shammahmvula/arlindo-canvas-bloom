@@ -154,10 +154,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <a
-                        href="mailto:hello@arlindomaunde.com"
+                        href="mailto:a.maunde@gmail.com"
                         className="text-muted-foreground hover:text-accent transition-colors"
                       >
-                        hello@arlindomaunde.com
+                        a.maunde@gmail.com
                       </a>
                     </div>
                   </div>
@@ -167,10 +167,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
                       <a
-                        href="tel:+258840000000"
+                        href="tel:+27834665050"
                         className="text-muted-foreground hover:text-accent transition-colors"
                       >
-                        +258 84 000 0000
+                        +27 83 466 5050
                       </a>
                     </div>
                   </div>
@@ -180,7 +180,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Studio Location</h3>
                       <p className="text-muted-foreground">
-                        Maputo, Mozambique
+                        Victoria Yards Lorentzville, Johannesburg
                       </p>
                     </div>
                   </div>

@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "./ui/badge";
-import OptimizedImage from "./OptimizedImage";
+import ProgressiveImage from "./ProgressiveImage";
 
 interface ArtworkCardProps {
   id: string;
@@ -13,11 +14,11 @@ interface ArtworkCardProps {
   priority?: boolean;
 }
 
-const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold, priority = false }: ArtworkCardProps) => {
+const ArtworkCard = memo(({ id, title, image, medium, dimensions, price, sold, priority = false }: ArtworkCardProps) => {
   return (
     <Link to={`/artwork/${id}`} className="artwork-card group block">
       <div className="relative overflow-hidden rounded-lg">
-        <OptimizedImage
+        <ProgressiveImage
           src={image}
           alt={`${title} - Mixed media painting by Arlindo Maunde`}
           className="w-full h-auto rounded-lg transition-transform duration-500 group-hover:scale-105"
@@ -43,6 +44,8 @@ const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold, priori
       </div>
     </Link>
   );
-};
+});
+
+ArtworkCard.displayName = "ArtworkCard";
 
 export default ArtworkCard;

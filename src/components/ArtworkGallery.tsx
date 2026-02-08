@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ZoomIn } from "lucide-react";
 import { cn } from "@/lib/utils";
-import OptimizedImage from "./OptimizedImage";
+import ProgressiveImage from "./ProgressiveImage";
 
 interface ArtworkImage {
   main: string;
@@ -89,7 +89,7 @@ const ArtworkGallery = ({ images, title }: ArtworkGalleryProps) => {
             transition={{ duration: 0.3 }}
             className="w-full h-full"
           >
-            <OptimizedImage
+            <ProgressiveImage
               src={currentImage.main}
               alt={currentImage.alt}
               className="w-full h-full"
@@ -132,7 +132,7 @@ const ArtworkGallery = ({ images, title }: ArtworkGalleryProps) => {
               )}
               aria-label={`View ${image.alt}`}
             >
-              <OptimizedImage
+              <ProgressiveImage
                 src={image.thumbnail}
                 alt={image.alt}
                 className="w-full h-full"

@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { Link } from "react-router-dom";
 import { Badge } from "./ui/badge";
 import ProgressiveImage from "./ProgressiveImage";
@@ -14,7 +13,7 @@ interface ArtworkCardProps {
   priority?: boolean;
 }
 
-const ArtworkCard = memo(({ id, title, image, medium, dimensions, price, sold, priority = false }: ArtworkCardProps) => {
+const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold, priority = false }: ArtworkCardProps) => {
   return (
     <Link to={`/artwork/${id}`} className="artwork-card group block">
       <div className="relative overflow-hidden rounded-lg">
@@ -44,8 +43,6 @@ const ArtworkCard = memo(({ id, title, image, medium, dimensions, price, sold, p
       </div>
     </Link>
   );
-});
-
-ArtworkCard.displayName = "ArtworkCard";
+};
 
 export default ArtworkCard;

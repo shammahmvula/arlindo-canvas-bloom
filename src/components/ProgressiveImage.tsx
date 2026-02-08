@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, memo } from "react";
+import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 interface ProgressiveImageProps {
@@ -12,7 +12,7 @@ interface ProgressiveImageProps {
   placeholderColor?: string;
 }
 
-const ProgressiveImage = memo(({ 
+const ProgressiveImage = ({ 
   src, 
   alt, 
   className, 
@@ -112,8 +112,6 @@ const ProgressiveImage = memo(({
       )}
     </div>
   );
-});
-
-ProgressiveImage.displayName = "ProgressiveImage";
+};
 
 export default ProgressiveImage;

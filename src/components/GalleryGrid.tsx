@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, memo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import ArtworkCard from "./ArtworkCard";
 import { Artwork } from "@/data/artworks";
@@ -10,7 +10,7 @@ interface GalleryGridProps {
   batchSize?: number;
 }
 
-const GalleryGrid = memo(({ 
+const GalleryGrid = ({ 
   artworks, 
   initialCount = 9,
   batchSize = 6 
@@ -114,8 +114,6 @@ const GalleryGrid = memo(({
       )}
     </>
   );
-});
-
-GalleryGrid.displayName = "GalleryGrid";
+};
 
 export default GalleryGrid;

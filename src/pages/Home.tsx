@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
+import OptimizedImage from "@/components/OptimizedImage";
 // Hero Images - Three Featured Artworks
 import trumpetPlayerLookingUp from "@/assets/gallery/trumpet-player-looking-up.jpg";
 import childLookingUp from "@/assets/child-looking-up.png";
@@ -81,13 +82,12 @@ const Home = () => {
       
       {/* Mobile Hero Section - Single Image */}
       <section className="md:hidden relative bg-background overflow-hidden h-screen">
-        <img 
+        <OptimizedImage
           src={trumpetPlayerLookingUp}
           alt="Trumpet Dreams by Arlindo Maunde - Jazz musician looking upward"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
-          decoding="sync"
+          className="absolute inset-0 w-full h-full"
+          priority={true}
+          objectFit="cover"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/50 z-10" />
@@ -124,40 +124,37 @@ const Home = () => {
         <div className="flex w-full h-full">
           {/* Image 1: Trumpet Dreams (Looking Upward) */}
           <div className="flex-1 h-full overflow-hidden relative group">
-            <img 
+            <OptimizedImage
               src={trumpetPlayerLookingUp}
               alt="Trumpet Dreams - Jazz musician looking upward, contemporary African expressionist painting by Arlindo Maunde"
-              loading="eager"
-              fetchPriority="high"
-              decoding="sync"
+              className="w-full h-full transition-transform duration-600 group-hover:scale-105 will-change-transform"
+              priority={true}
+              objectFit="cover"
               sizes="33vw"
-              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105 will-change-transform"
             />
           </div>
 
           {/* Image 2: Child Looking Up */}
           <div className="flex-1 h-full overflow-hidden relative group">
-            <img 
+            <OptimizedImage
               src={childLookingUp}
               alt="Child Looking Up - Young child gazing upward, contemporary portrait by Arlindo Maunde"
-              loading="eager"
-              fetchPriority="high"
-              decoding="sync"
+              className="w-full h-full transition-transform duration-600 group-hover:scale-105 will-change-transform"
+              priority={true}
+              objectFit="cover"
               sizes="33vw"
-              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105 will-change-transform"
             />
           </div>
 
           {/* Image 3: Regal Heritage (Woman with Headdress) */}
           <div className="flex-1 h-full overflow-hidden relative group">
-            <img 
+            <OptimizedImage
               src={africanHeaddress}
               alt="Regal Heritage - Woman with elaborate headdress, cultural portrait by Arlindo Maunde"
-              loading="eager"
-              fetchPriority="high"
-              decoding="sync"
+              className="w-full h-full transition-transform duration-600 group-hover:scale-105 will-change-transform"
+              priority={true}
+              objectFit="cover"
               sizes="33vw"
-              className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105 will-change-transform"
             />
           </div>
         </div>

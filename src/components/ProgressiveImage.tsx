@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface ProgressiveImageProps {
@@ -9,7 +9,6 @@ interface ProgressiveImageProps {
   aspectRatio?: string;
   sizes?: string;
   objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
-  placeholderColor?: string;
 }
 
 const ProgressiveImage = ({ 
@@ -20,39 +19,9 @@ const ProgressiveImage = ({
   aspectRatio = "auto",
   sizes = "100vw",
   objectFit = "cover",
-  placeholderColor = "hsl(0 0% 96%)"
 }: ProgressiveImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [shouldLoad, setShouldLoad] = useState(priority);
   const [hasError, setHasError] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Lazy loading with IntersectionObserver
-  useEffect(() => {
-    if (priority) {
-      setShouldLoad(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: "300px", // Start loading 300px before viewport
-        threshold: 0,
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [priority]);
 
   const objectFitClass = {
     cover: "object-cover",
@@ -64,45 +33,33 @@ const ProgressiveImage = ({
 
   return (
     <div 
-      ref={containerRef}
       className={cn(
-        "relative overflow-hidden",
+        "relative overflow-hidden bg-secondary",
         className
       )} 
-      style={{ 
-        aspectRatio,
-        backgroundColor: placeholderColor,
-      }}
+      style={{ aspectRatio }}
     >
-      {/* Shimmer placeholder - only show when not loaded */}
+      {/* Simple placeholder - only show when not loaded */}
       {!isLoaded && !hasError && (
-        <div 
-          className="absolute inset-0 animate-shimmer"
-          style={{
-            background: `linear-gradient(90deg, ${placeholderColor} 0%, hsl(0 0% 92%) 50%, ${placeholderColor} 100%)`,
-            backgroundSize: '200% 100%',
-          }}
-        />
+        <div className="absolute inset-0 bg-secondary" />
       )}
       
-      {/* Actual image - only render when should load */}
-      {shouldLoad && (
-        <img
-          src={src}
-          alt={alt}
-          loading={priority ? "eager" : "lazy"}
-          decoding={priority ? "sync" : "async"}
-          sizes={sizes}
-          onLoad={() => setIsLoaded(true)}
-          onError={() => setHasError(true)}
-          className={cn(
-            "w-full h-full transition-opacity duration-500",
-            objectFitClass,
-            isLoaded ? "opacity-100" : "opacity-0",
-            hasError && "hidden"
-          )}
-        />
-      )}
+      {/* Image - always render, use native lazy loading */}
+      <img
+        src={src}
+        alt={alt}
+        loading={priority ? "eager" : "lazy"}
+        decoding={priority ? "sync" : "async"}
+        sizes={sizes}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => setHasError(true)}
+        className={cn(
+          "w-full h-full transition-opacity duration-300",
+          objectFitClass,
+          isLoaded ? "opacity-100" : "opacity-0",
+          hasError && "hidden"
+        )}
+      />
       
       {/* Error state */}
       {hasError && (

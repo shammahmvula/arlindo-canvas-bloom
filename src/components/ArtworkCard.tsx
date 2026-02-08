@@ -10,9 +10,10 @@ interface ArtworkCardProps {
   dimensions: string;
   price?: number;
   sold?: boolean;
+  priority?: boolean;
 }
 
-const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold }: ArtworkCardProps) => {
+const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold, priority = false }: ArtworkCardProps) => {
   return (
     <Link to={`/artwork/${id}`} className="artwork-card group block">
       <div className="relative overflow-hidden rounded-lg">
@@ -22,6 +23,7 @@ const ArtworkCard = ({ id, title, image, medium, dimensions, price, sold }: Artw
           className="w-full h-auto rounded-lg transition-transform duration-500 group-hover:scale-105"
           aspectRatio="4/5"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={priority}
         />
         {sold && (
           <Badge className="absolute top-4 right-4 bg-gold text-gold-foreground">

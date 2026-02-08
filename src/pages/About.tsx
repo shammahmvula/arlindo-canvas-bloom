@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import OptimizedImage from "@/components/OptimizedImage";
+import ProgressiveImage from "@/components/ProgressiveImage";
 import artistStudio from "@/assets/arlindo-gallery.jpg";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <OptimizedImage
+              <ProgressiveImage
                 src={artistStudio}
                 alt="Arlindo Maunde in gallery with his artwork"
                 className="w-full h-auto rounded-lg shadow-2xl"

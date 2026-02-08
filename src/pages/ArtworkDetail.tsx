@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ArtworkCard from "@/components/ArtworkCard";
 import ArtworkGallery from "@/components/ArtworkGallery";
-import OptimizedImage from "@/components/OptimizedImage";
+import ProgressiveImage from "@/components/ProgressiveImage";
 import { artworks } from "@/data/artworks";
 import { useToast } from "@/hooks/use-toast";
 

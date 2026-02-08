@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import ArtworkCard from "@/components/ArtworkCard";
-import OptimizedImage from "@/components/OptimizedImage";
+import ProgressiveImage from "@/components/ProgressiveImage";
 // Hero Images - Three Featured Artworks
 import trumpetPlayerLookingUp from "@/assets/gallery/trumpet-player-looking-up.jpg";
 import childLookingUp from "@/assets/child-looking-up.png";
@@ -82,7 +82,7 @@ const Home = () => {
       
       {/* Mobile Hero Section - Single Image */}
       <section className="md:hidden relative bg-background overflow-hidden h-screen">
-        <OptimizedImage
+        <ProgressiveImage
           src={trumpetPlayerLookingUp}
           alt="Trumpet Dreams by Arlindo Maunde - Jazz musician looking upward"
           className="absolute inset-0 w-full h-full"
@@ -124,7 +124,7 @@ const Home = () => {
         <div className="flex w-full h-full">
           {/* Image 1: Trumpet Dreams (Looking Upward) */}
           <div className="flex-1 h-full overflow-hidden relative group">
-            <OptimizedImage
+            <ProgressiveImage
               src={trumpetPlayerLookingUp}
               alt="Trumpet Dreams - Jazz musician looking upward, contemporary African expressionist painting by Arlindo Maunde"
               className="w-full h-full transition-transform duration-600 group-hover:scale-105 will-change-transform"
@@ -136,7 +136,7 @@ const Home = () => {
 
           {/* Image 2: Child Looking Up */}
           <div className="flex-1 h-full overflow-hidden relative group">
-            <OptimizedImage
+            <ProgressiveImage
               src={childLookingUp}
               alt="Child Looking Up - Young child gazing upward, contemporary portrait by Arlindo Maunde"
               className="w-full h-full transition-transform duration-600 group-hover:scale-105 will-change-transform"
@@ -148,7 +148,7 @@ const Home = () => {
 
           {/* Image 3: Regal Heritage (Woman with Headdress) */}
           <div className="flex-1 h-full overflow-hidden relative group">
-            <OptimizedImage
+            <ProgressiveImage
               src={africanHeaddress}
               alt="Regal Heritage - Woman with elaborate headdress, cultural portrait by Arlindo Maunde"
               className="w-full h-full transition-transform duration-600 group-hover:scale-105 will-change-transform"

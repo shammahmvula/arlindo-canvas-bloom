@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo } from "react";
 import { cn } from "@/lib/utils";
 
-interface OptimizedImageProps {
+interface ProgressiveImageProps {
   src: string;
   alt: string;
   className?: string;
@@ -9,44 +9,46 @@ interface OptimizedImageProps {
   aspectRatio?: string;
   sizes?: string;
   objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
+  placeholderColor?: string;
 }
 
-const OptimizedImage = ({ 
+const ProgressiveImage = memo(({ 
   src, 
   alt, 
   className, 
   priority = false,
   aspectRatio = "auto",
   sizes = "100vw",
-  objectFit = "cover"
-}: OptimizedImageProps) => {
+  objectFit = "cover",
+  placeholderColor = "hsl(0 0% 96%)"
+}: ProgressiveImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(priority);
+  const [shouldLoad, setShouldLoad] = useState(priority);
   const [hasError, setHasError] = useState(false);
-  const imgRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Intersection Observer for lazy loading
+  // Lazy loading with IntersectionObserver
   useEffect(() => {
     if (priority) {
-      setIsInView(true);
+      setShouldLoad(true);
       return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true);
+          setShouldLoad(true);
           observer.disconnect();
         }
       },
       {
-        rootMargin: "200px", // Start loading 200px before entering viewport
-        threshold: 0.01,
+        rootMargin: "300px", // Start loading 300px before viewport
+        threshold: 0,
       }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     return () => observer.disconnect();
@@ -62,31 +64,39 @@ const OptimizedImage = ({
 
   return (
     <div 
-      ref={imgRef}
+      ref={containerRef}
       className={cn(
-        "relative overflow-hidden bg-secondary",
+        "relative overflow-hidden",
         className
       )} 
-      style={{ aspectRatio }}
+      style={{ 
+        aspectRatio,
+        backgroundColor: placeholderColor,
+      }}
     >
-      {/* Animated gradient placeholder */}
+      {/* Shimmer placeholder - only show when not loaded */}
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-muted/50 to-secondary animate-shimmer" />
+        <div 
+          className="absolute inset-0 animate-shimmer"
+          style={{
+            background: `linear-gradient(90deg, ${placeholderColor} 0%, hsl(0 0% 92%) 50%, ${placeholderColor} 100%)`,
+            backgroundSize: '200% 100%',
+          }}
+        />
       )}
       
-      {/* Actual image - only load when in view */}
-      {isInView && (
+      {/* Actual image - only render when should load */}
+      {shouldLoad && (
         <img
           src={src}
           alt={alt}
           loading={priority ? "eager" : "lazy"}
-          fetchPriority={priority ? "high" : "auto"}
           decoding={priority ? "sync" : "async"}
           sizes={sizes}
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
           className={cn(
-            "w-full h-full transition-opacity duration-300",
+            "w-full h-full transition-opacity duration-500",
             objectFitClass,
             isLoaded ? "opacity-100" : "opacity-0",
             hasError && "hidden"
@@ -102,6 +112,8 @@ const OptimizedImage = ({
       )}
     </div>
   );
-};
+});
 
-export default OptimizedImage;
+ProgressiveImage.displayName = "ProgressiveImage";
+
+export default ProgressiveImage;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ArtworkCard from "@/components/ArtworkCard";
+import GalleryGrid from "@/components/GalleryGrid";
 import { artworks, categories } from "@/data/artworks";
 import { Button } from "@/components/ui/button";
 
@@ -45,29 +45,12 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Artwork Grid */}
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
-          >
-            {filteredArtworks.map((artwork, index) => (
-              <motion.div
-                key={artwork.id}
-                layout
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.3) }}
-              >
-                <ArtworkCard {...artwork} priority={index < 6} />
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {filteredArtworks.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-lg text-muted-foreground">No artworks found in this category.</p>
-            </div>
-          )}
+          {/* Artwork Grid with Progressive Loading */}
+          <GalleryGrid 
+            artworks={filteredArtworks}
+            initialCount={9}
+            batchSize={6}
+          />
         </div>
       </main>
       <Footer />
